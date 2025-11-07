@@ -1,1 +1,11 @@
 /* for personalized styles*/
+@import "tailwindcss";
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+.bg-primary{
+    background-color: #26254F;
+}
+
+body{
+    font-family: 'Frank Ruhl Libre', serif;
+}
