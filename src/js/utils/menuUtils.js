@@ -8,4 +8,3 @@ export function closeMenu(menu) {
   menu.classList.remove("flex");
   menu.classList.add("hidden");
 }
-
