@@ -6,6 +6,18 @@
     background-color: #26254F;
 }
 
-body{
+.bg-secondary{
     font-family: 'Frank Ruhl Libre', serif;
+    background-color:#E1DFDF;
+}
+.gold{
+    color: #D5972C;
+}
+.show-menu{
+    animation: show-menu;
+    animation-duration: 0.7s;
+}
+@keyframes show-menu {
+    from{left: -300px;}
+    to{inset:0}
 }
