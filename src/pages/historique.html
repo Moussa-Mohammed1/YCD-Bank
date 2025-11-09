@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Historique YCD</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="../styles/style.css">
+</head>
+<body class="bg-secondary">
+    <header>
+
+        <div class="flex items-center justify-between bg-primary w-full h-20 md:hidden">
+
+            <button id="open-menu" class="">
+                <i class="fa-solid fa-bars text-white text-5xl"></i>
+            </button>
+
+            <div class="">
+                <img class="scale-80" src="../assets/images/logo.png" alt="logo">
+            </div>
+
+            <div class="min-w-16">
+            </div>
+
+        </div>
+
+    </header>
+    <section id="menu"
+        class="hidden z-50 md:w-1/4 md:block h-full w-4/5 bg-primary fixed top-0  flex-col items-center pt-5">
+
+        <div class="flex w-full items-center justify-between md:justify-center md:pr-4 gap-5">
+
+            <button class="md:hidden">
+                <i id="close-menu" class="fa-solid fa-xmark text-white text-3xl"></i>
+            </button>
+
+            <div class="w-44">
+                <img src="../assets/images/logo.png" alt="LOGO">
+            </div>
+
+            <div class="min-w-12 md:hidden"></div>
+
+        </div>
+
+        <ul class="pt-7 text-3xl md:text-2xl text-white text-center flex flex-col gap-10">
+            <li><a href="" class="gold border-b-2 pb-2">Mes Comptes</a></li>
+            <li><a href="../pages/virements.html">Virements</a></li>
+            <li><a href="../pages/paiements.html">Paiements</a></li>
+            <li><a href="../pages/historique.html">Historique</a></li>
+            <li><a href="../pages/beneficiaire.html">Bénéfeciaire</a></li>
+            <li><a href="../pages/conversion.html">Conversion Devises</a></li>
+            <li><a href="../pages/carte.html">Cartes</a></li>
+        </ul>
+
+        </div>
+
+    </section>
+
+    <main 
+        class="p-4  flex flex-col gap-7 md:absolute md:w-8/12 md:right-16 md:top-16 drop-shadow-2xl ">
+        <h1 
+            class=" font-bold text-2xl text-center md:text-start ">Historique des transaction</h1>
+        <div 
+            class="flex flex-row justify-center gap-10 flex-wrap">
+            <div 
+                class="group flex flex-row scale-up items-center md:w-2/5 gap-1 p-2 rounded-2xl 
+                       hover:shadow-xl hover:shadow-emerald-200  bg-linear-to-r from-white
+                        via-stone-200 to-sky-100 duration-500">
+                <i class="fa-solid fa-arrow-up group-hover:pb-3 duration-500"></i> 
+                <div class="">
+                    <h2  
+                        class="font-bold text-lg">Total des entrées</h2>
+                    <p
+                        id="historique-total-entree"
+                        class="text-center gold font-bold text-2xl" >10000 <span>DH</span> </p>
+                </div>
+            </div>
+            <div class="group flex md:w-2/5 scale-up flex-row items-center rounded-2xl 
+                hover:shadow-xl hover:shadow-red-300 bg-linear-to-r p-2 from-red-300 duration-500">
+                <i class="fa-solid fa-arrow-down group-hover:pt-3 duration-500"></i> 
+                <div>
+                    <h2
+                        class="font-bold text-lg">Total des depenses</h2>
+                    <p 
+                        id="historique-total-depenses"
+                        class="text-center gold font-bold text-2xl">10000 <span>DH</span></p>
+                </div>
+            </div>
+        </div>
+        <div>
+            <div 
+                class="">
+                <h1 
+                    class=" font-bold text-2xl py-2 " >Trier par:</h1>
+                <select 
+                    class="outline-none focus:ring-blue-500 p-2 bg-white rounded-xl border border-black w-5/5" name="" id="">
+                    <option value="">Type d'operation</option>
+                    <option value="">Virements</option>
+                    <option value="">Facture</option>
+                    <option value="">Recharge</option>
+                </select>
+            </div>
+            
+            <div 
+            class="flex flex-row justify-between pt-2 font-bold text-lg ">
+                <h1>Type</h1>
+                <h1>Date</h1>
+                <h1>Montant</h1>
+            </div>
+            <div>
+                <div 
+                    class="flex flex-row bg-white mt-4 justify-between">
+                    <h1 
+                        id="historique-type"
+                        class="">Recharge</h1>
+                    <p 
+                    id="historique-date">
+                    12-02-2025</p>
+                    <p
+                        id="historique-montant">
+                    100 <span>DH</span> </p>
+                </div>
+                <div 
+                    class="flex flex-row bg-white mt-4 justify-between">
+                    <h1 
+                        id="historique-type"
+                        class="">Recharge</h1>
+                    <p 
+                    id="historique-date">
+                    12-02-2025</p>
+                    <p
+                        id="historique-montant">
+                    100 <span>DH</span> </p>
+                </div>
+                <div 
+                    class="flex flex-row bg-white mt-4 justify-between">
+                    <h1 
+                        id="historique-type"
+                        class="">Recharge</h1>
+                    <p 
+                    id="historique-date">
+                    12-02-2025</p>
+                    <p
+                        id="historique-montant">
+                    100 <span>DH</span> </p>
+                </div>
+                <div 
+                    class="flex flex-row bg-white mt-4 justify-between">
+                    <h1 
+                        id="historique-type"
+                        class="">Recharge</h1>
+                    <p 
+                    id="historique-date">
+                    12-02-2025</p>
+                    <p
+                        id="historique-montant">
+                    100 <span>DH</span> </p>
+                </div>
+            </div>
+        </div>
+    </main>
+    <script type="module" src="../js/pages/historique.js"></script>
+</body>
+</html>
