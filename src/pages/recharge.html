@@ -9,14 +9,23 @@
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
 </head>
 <body class="bg-secondary md:flex md:flex-row gap-70 ">
-    <header class="flex flex-row bg-primary h-20 md:hidden justify-around">
-        <button id="open-menu">
-            <i 
-            class="fa-solid fa-bars text-white text-5xl"></i>
+    <header>
+
+    <div class="flex items-center justify-between bg-primary w-full h-20 md:hidden">
+
+        <button id="open-menu" class="">
+            <i class="fa-solid fa-bars text-white text-5xl"></i>
         </button>
-        <img 
-            class="scale-60" src="../assets/images/logo.png" alt="">
-    </header>
+
+        <div class="">
+            <img class="scale-80" src="../assets/images/logo.png" alt="logo">
+        </div>
+
+        <div class="min-w-16">
+        </div>
+
+    </div>
+</header>
     <section 
         id="menu"
         class="hidden md:w-1/4 lg:block h-full w-4/5 bg-primary fixed top-0  flex-col items-center  pt-5 ">
@@ -40,13 +49,14 @@
         </ul>
     </section>
     <main 
-        class="p-4 lg:relative lg:left-100 lg:w-3/5">
+        class="p-4 md:absolute md:right-30 md:w-3/5">
         <h1 class="capitalize font-bold text-2xl py-4 text-center lg:text-start">Recharge telecom et internet</h1>
         <div class="bg-white rounded-2xl p-4 drop-shadow-transparent shadow-xl">
             <h3 class="capitalize font-bold  pb-2 pt-3">operateur</h3>
-            <select name="recharge-operateur" id="recharge-operateur" class="border-black border-2 w-5/5 py-2 ">
+            <select name="recharge-operateur" id="recharge-operateur" class="border-black border-2 bg-secondary outline-none w-5/5 py-2">
                 <option value="">Maroc Telecom</option>
                 <option value="">Inwi</option>
+                <option value="">Orange</option>
             </select>
             <div class="relative w-5/5">
                 <h1 class="capitalize font-bold pb-2 pt-3">Montant</h1>
