@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../styles/style.css">
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <title>inscription</title>
+</head>
+
+<body>
+    <!-- HEADER -->
+    <div class="bg-[#0F2647] h-34 flex justify-center items-center md:hidden">
+        <div>
+            <img class="ml-14" src="../assets/images/logo2.png" alt="LOGO">
+        </div>
+    </div>
+    <!-- HEADER -->
+
+    <div class="banner max-md:hidden">
+        <img class="float-start w-1/2 h-screen" src="../assets/images/bannier.png" alt="bannier">
+    </div>
+
+    <div class="container-connexion max-md:h-[calc(100vh-136px)] max-md:justify-start h-screen flex flex-col justify-center items-center gap-15">
+
+        <div class="logo-pc max-md:hidden">
+            <img src="../assets/images/logopc.png" alt="LOGO">
+        </div>
+
+        <div class=" max-md:mt-15 text-[#0F2647] text-4xl text-center font-bold">
+            <h2>Créer un compte</h2>
+        </div>
+
+        <div class="flex justify-center">
+
+            <div class="bg-[#FEFEFE] drop-shadow-xl p-10 w-90 h-90 flex flex-col gap-2 items-center">
+
+                <form method="post" class="flex flex-col gap-4 items-center">
+
+                    <div class="relative">
+                        <img class="absolute left-2 top-2" src="../assets/images/user.png" width="20" alt="email logo">
+                        <input class="p-1.5 pl-10 border-gray-300 border-solid border-2 rounded-lg" type="text" required
+                            placeholder="Nom Comple">
+                    </div>
+
+                    <div class="relative">
+                        <img class="absolute left-2 top-2" src="../assets/images/email.png" width="20" alt="email logo">
+                        <input class="p-1.5 pl-10 border-gray-300 border-solid border-2 rounded-lg" type="email"
+                            required placeholder="Email">
+                    </div>
+
+                    <div class="relative">
+                        <img class="absolute left-2 top-2" src="../assets/images/lock.png" width="20" alt="email logo">
+                        <input class="p-1.5 pl-10 border-gray-300 border-solid border-2 rounded-lg" type="password"
+                            required placeholder="Mot de pass">
+                    </div>
+
+                    <div class="relative">
+                        <img class="absolute left-2 top-2" src="../assets/images/lock.png" width="20" alt="email logo">
+                        <input class="p-1.5 pl-10 border-gray-300 border-solid border-2 rounded-lg" type="password"
+                            required placeholder=" Confirmé Mot de pass">
+                    </div>
+
+                    <input class="text-white bg-[#26254F] p-2 w-50 rounded-lg active:scale-95 active:bg-[#0a083c]"
+                        type="submit" value="Créer Mon Compte">
+
+                </form>
+
+                <div class="link flex gap-1">
+                    <p class="text-[#D5972C]" href="#">Déjà inscrit ?</p>
+                    <a href="connexion.html">Se Connecter</a>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+</body>
+
+</html>
