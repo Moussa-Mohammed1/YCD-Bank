@@ -13,6 +13,9 @@
 .gold{
     color: #D5972C;
 }
+.bg-gold{
+    background:#D5972C ;
+}
 .show-menu{
     animation: show-menu;
     animation-duration: 0.7s;
