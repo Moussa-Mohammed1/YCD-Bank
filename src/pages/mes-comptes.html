@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Recharge YCD-Bank</title>
+    <title>Mes Comptes</title>
     <link rel="stylesheet" href="../styles/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
         integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
@@ -33,31 +33,32 @@
 
     </header>
 
-    <section id="menu" class="hidden z-50 md:w-1/4 md:block h-full w-4/5 bg-primary fixed top-0  flex-col items-center pt-5">
+    <section id="menu"
+        class="hidden z-50 md:w-1/4 md:block h-full w-4/5 bg-primary fixed top-0  flex-col items-center pt-5">
 
-                <div class="flex items-cente w-full items-center justify-between gap-5">
+        <div class="flex w-full items-center justify-between md:justify-center md:pr-4 gap-5">
 
-                    <button class="md:hidden">
-                        <i id="close-menu" class="fa-solid fa-xmark text-white text-3xl"></i>
-                    </button>
+            <button class="md:hidden">
+                <i id="close-menu" class="fa-solid fa-xmark text-white text-3xl"></i>
+            </button>
 
-                    <div class="w-44">
-                        <img src="../assets/images/logo.png" alt="LOGO">
-                    </div>
+            <div class="w-44">
+                <img src="../assets/images/logo.png" alt="LOGO">
+            </div>
 
-                    <div class="min-w-12"></div>
+            <div class="min-w-12 md:hidden"></div>
 
-                </div>
+        </div>
 
-                <ul class="pt-7 text-3xl md:text-2xl text-white text-center flex flex-col gap-10">
-                    <li><a href="" class="gold border-b-2 pb-2">Mes Comptes</a></li>
-                    <li><a href="../pages/virements.html">Virements</a></li>
-                    <li><a href="../pages/paiements.html">Paiements</a></li>
-                    <li><a href="../pages/historique.html">Historique</a></li>
-                    <li><a href="../pages/beneficiaire.html">Bénéfeciaire</a></li>
-                    <li><a href="../pages/conversion.html">Conversion Devises</a></li>
-                    <li><a href="../pages/carte.html">Cartes</a></li>
-                </ul>
+        <ul class="pt-7 text-3xl md:text-2xl text-white text-center flex flex-col gap-10">
+            <li><a href="" class="gold border-b-2 pb-2">Mes Comptes</a></li>
+            <li><a href="../pages/virements.html">Virements</a></li>
+            <li><a href="../pages/paiements.html">Paiements</a></li>
+            <li><a href="../pages/historique.html">Historique</a></li>
+            <li><a href="../pages/beneficiaire.html">Bénéfeciaire</a></li>
+            <li><a href="../pages/conversion.html">Conversion Devises</a></li>
+            <li><a href="../pages/carte.html">Cartes</a></li>
+        </ul>
 
         </div>
 
@@ -67,10 +68,14 @@
 
         <div class="container-comptes mt-14 flex flex-col items-center gap-10">
 
+            <div class="text-[#0F2647] text-4xl text-center font-bold">
+                <h2>Tableau de Bord</h2>
+            </div>
+
             <div class="bg-white w-11/12 h-60 rounded-2xl drop-shadow-xl p-8 flex flex-col items-center gap-8">
 
                 <div class="text-[#0F2647] text-2xl text-center font-bold">
-                    <h1>Solde Prancipal</h1>
+                    <h1>Solde Principal</h1>
                 </div>
 
                 <div class="sold flex gap-2">
@@ -106,19 +111,23 @@
                     <ul class="flex justify-between gap-7">
 
                         <li>
-                            <a  href="virements.html"><img class="active:scale-95" src="../assets/images/Virment.png" alt="virment logo"></a>
+                            <a href="virements.html"><img class="active:scale-95" src="../assets/images/Virment.png"
+                                    alt="virment logo"></a>
                         </li>
 
                         <li>
-                            <a href="paiements.html"><img class="active:scale-95" src="../assets/images/Paiment.png" alt="paiment logo"></a>
+                            <a href="paiements.html"><img class="active:scale-95" src="../assets/images/Paiment.png"
+                                    alt="paiment logo"></a>
                         </li>
 
                         <li>
-                            <a href="recharge.html"><img class="active:scale-95" src="../assets/images/recharge.png" alt="recharge logo"></a>
+                            <a href="recharge.html"><img class="active:scale-95" src="../assets/images/recharge.png"
+                                    alt="recharge logo"></a>
                         </li>
 
                         <li>
-                            <a href="historique.html"><img class="active:scale-95" src="../assets/images/Hestorique.png" alt="hestorique logo"></a>
+                            <a href="historique.html"><img class="active:scale-95" src="../assets/images/Hestorique.png"
+                                    alt="hestorique logo"></a>
                         </li>
 
                     </ul>
@@ -129,7 +138,7 @@
                     <p>Virements</p>
                     <p>Paiements</p>
                     <p>Recharge</p>
-                    <p>Hestorique</p>
+                    <p>Historique</p>
                 </div>
 
             </div>
@@ -147,7 +156,12 @@
                     </div>
 
                     <div>
-                        <img class="w-5" src="../assets/images/lock.png" alt="lock logo">
+
+                        <button
+                            class="text-white bg-[#26254F] p-1 w-20 rounded-full active:scale-95 active:bg-[#0a083c]">
+                            <span>Exporter</span>
+                        </button>
+
                     </div>
 
                 </div>
@@ -167,7 +181,12 @@
                     </div>
 
                     <div>
-                        <img class="w-5" src="../assets/images/lock.png" alt="lock logo">
+
+                        <button
+                            class="text-white bg-[#26254F] p-1 w-20 rounded-full active:scale-95 active:bg-[#0a083c]">
+                            <span>Exporter</span>
+                        </button>
+
                     </div>
 
                 </div>
