@@ -12,33 +12,119 @@
         crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 
-<body>
-    <header class="flex flex-row bg-primary h-20 justify-around md:hidden">
-        <button id="recharge-menu">
-            <i class="fa-solid fa-bars text-white text-5xl"></i>
-        </button>
-        <img class="scale-60" src="../assets/images/logo.png" alt="">
+<body class="bg-secondary ">
+
+    <header>
+
+        <div class="flex items-center justify-between bg-primary w-full h-20 md:hidden">
+
+            <button id="open-menu" class="">
+                <i class="fa-solid fa-bars text-white text-5xl"></i>
+            </button>
+
+            <div class="">
+                <img class="scale-80" src="../assets/images/logo.png" alt="logo">
+            </div>
+
+            <div class="min-w-16">
+            </div>
+
+        </div>
+
     </header>
-    <section>
-        <h1 class="text-2xl p-8 text-sky-900">Effectuer un virement</h1>
-        <div>
-            <h5 class="pl-12">Bénéficiare</h5>
-            <div class="border w-max md:w-290 md:ml-7  flex items-center gap-5 py-1 rounded-lg pl-1 mx-auto">
-                <i class="fa-solid fa-magnifying-glass" style="color: #000000;"></i>
-                <input class="focus:outline-none w-100 md:w-132" type="search" placeholder="Rechercher bénéficiaire" />
-            </div>
+
+
+
+    <div class="md:grid md:grid-cols-[25%_1fr]">
+
+        <!-- Section -->
+
+        <div class="sectioncontainer">
+
+            <section id="menu"
+                class="hidden z-50 md:w-1/4 md:inline-block h-full w-4/5 bg-primary fixed top-0 flex-col items-center pt-5">
+
+                <div class="flex w-full items-center justify-between md:justify-center md:pr-4 gap-5">
+
+                    <button class="md:hidden">
+                        <i id="close-menu" class="fa-solid fa-xmark text-white text-3xl"></i>
+                    </button>
+
+                    <div class="w-44">
+                        <img src="../assets/images/logo.png" alt="LOGO">
+                    </div>
+
+                    <div class="min-w-12 md:hidden"></div>
+
+                </div>
+                <div>
+                    <ul class="pt-7 text-3xl md:text-2xl text-white text-center flex flex-col gap-10">
+                        <li><a href="" class="gold border-b-2 pb-2">Mes Comptes</a></li>
+                        <li><a href="../pages/virements.html">Virements</a></li>
+                        <li><a href="../pages/paiements.html">Paiements</a></li>
+                        <li><a href="../pages/historique.html">Historique</a></li>
+                        <li><a href="../pages/beneficiaire.html">Bénéficiaire</a></li>
+                        <li><a href="../pages/conversion.html">Conversion Devises</a></li>
+                        <li><a href="../pages/carte.html">Cartes</a></li>
+                        <li><a href="../pages/compte-epargne.html">Compte Epargne</a></li>
+                    </ul>
+
+                </div>
+
+            </section>
+
+        </div>
+        <!-- Main -->
+
+        <div class="maincontainer">
+
+            <main>
+
+                <section>
+                    <h1 class="text-2xl p-8 text-sky-900">Effectuer un virement</h1>
+                    <div>
+                        <h5 class="pl-12">Bénéficiare</h5>
+                        <div
+                            class=" bg-stone-50 border w-max md:w-220 md:ml-7 md:h-14 flex items-center gap-5 py-1 rounded-lg pl-1 mx-auto">
+                            <i class="fa-solid fa-magnifying-glass" style="color: #000000;"></i>
+                            <input class="focus:outline-none w-100 md:w-132" type="search"
+                                placeholder="Rechercher bénéficiaire" />
+                        </div>
+                    </div>
+
+                    <div class="mt-13">
+                        <h5 class="pl-12">Montant</h5>
+                        <div
+                            class=" bg-stone-50 border w-110 md:w-220 md:ml-7 md:h-15 flex items-center gap-5 py-1 rounded-lg pl-1 mx-auto">
+
+                            <input class="focus:outline-none w-100 md:w-132" type="text" placeholder="     0000000" />
+                            <h5 class="mr-5 md:ml-124">MAD</h5>
+                        </div>
+                    </div>
+
+                    <div class="mt-7">
+                        <h5 class="pl-12">Compte Source</h5>
+                        <div
+                            class=" bg-stone-50 border w-110 md:w-220 md:ml-7 md:h-15 flex items-center gap-5 py-1 rounded-lg pl-1 mx-auto">
+                            <i class="fa-solid fa-lock" style="color: #000000;"></i>
+                            <input class="focus:outline-none w-100 md:w-132" placeholder="Compte Principale" />
+                            <h5 class="mr-19  md:ml-12 flex whitespace-nowrap gap-3">
+                                Solde disponible : <span id="solde">00000</span> MAD </h5>
+                           
+                        </div>
+                    </div>
+                </section>
+
+
+            </main>
+
         </div>
 
-        <div class="mt-13">
-            <h5 class="pl-12">Montant</h5>
-            <div class="border w-110 md:w-290 md:ml-7  flex items-center gap-5 py-1 rounded-lg pl-1 mx-auto">
-                <i class="fa-solid fa-magnifying-glass" style="color: #000000;"></i>
-                <input class="focus:outline-none w-100 md:w-132" type="text" placeholder="0000000" />
-                <h5 class="mr-5 md:ml-124">MAD</h5>
-            </div>
-        </div>
-    </section>
+    </div>
 
+
+
+    <script type="module" src="../js/pages/beneficiaire.js"></script>
 </body>
 
 </html>
