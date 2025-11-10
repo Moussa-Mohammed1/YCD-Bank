@@ -27,8 +27,16 @@
     from{left: -300px;}
     to{inset:0}
 }
+.scale-up{
+    animation: scale-up;
+    animation-duration: 0.5s;
+}
+@keyframes scale-up{
+    from{scale: 0.2;}
+    to{scale:1;}
+}
 .bg-compte-epargne{
-    background:url('../assets/images/bg-compte-epargne.png');
+    background: url('../assets/images/bg-compte-epargne.png');
     background-position: center;
     background-size: cover;
 }

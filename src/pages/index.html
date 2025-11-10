@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../styles/style.css">
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
-    <title>inscription</title>
+    <title>Connexion</title>
 </head>
 
 <body>
@@ -29,20 +29,14 @@
         </div>
 
         <div class=" max-md:mt-15 text-[#0F2647] text-4xl text-center font-bold">
-            <h2>Créer un compte</h2>
+            <h2>Bienvenue</h2>
         </div>
 
         <div class="flex justify-center">
 
-            <div class="bg-[#FEFEFE] drop-shadow-xl p-10 w-90 h-90 flex flex-col gap-2 items-center">
+            <div class="bg-[#FEFEFE] drop-shadow-xl p-10 w-90 h-80 flex flex-col gap-6 items-center">
 
-                <form method="post" class="flex flex-col gap-4 items-center">
-
-                    <div class="relative">
-                        <img class="absolute left-2 top-2" src="../assets/images/user.png" width="20" alt="email logo">
-                        <input class="p-1.5 pl-10 border-gray-300 border-solid border-2 rounded-lg" type="text" required
-                            placeholder="Nom Comple">
-                    </div>
+                <form method="post" class="flex flex-col gap-6 items-center">
 
                     <div class="relative">
                         <img class="absolute left-2 top-2" src="../assets/images/email.png" width="20" alt="email logo">
@@ -56,22 +50,15 @@
                             required placeholder="Mot de pass">
                     </div>
 
-                    <div class="relative">
-                        <img class="absolute left-2 top-2" src="../assets/images/lock.png" width="20" alt="email logo">
-                        <input class="p-1.5 pl-10 border-gray-300 border-solid border-2 rounded-lg" type="password"
-                            required placeholder=" Confirmé Mot de pass">
-                    </div>
-
                     <input class="text-white bg-[#26254F] p-2 w-50 rounded-lg active:scale-95 active:bg-[#0a083c]"
-                        type="submit" value="Créer Mon Compte">
+                        type="submit" value="Se Connecter">
 
                 </form>
 
-                <div class="link flex gap-1">
-                    <p class="text-[#D5972C]" href="#">Déjà inscrit ?</p>
-                    <a href="connexion.html">Se Connecter</a>
+                <div class="link flex gap-1 text-sm">
+                    <p class="text-[#D5972C]">Pas encore de compte ?</p>
+                    <a href="inscription.html">Créer un compte</a>
                 </div>
-
             </div>
 
         </div>
