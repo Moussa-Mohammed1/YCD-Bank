@@ -13,8 +13,11 @@
 .gold{
     color: #D5972C;
 }
+.benefeciaire-select{
+    font-size: 9px;
+}
 .bg-gold{
-    background:#D5972C ;
+    background-color: #D5972C;
 }
 .show-menu{
     animation: show-menu;
