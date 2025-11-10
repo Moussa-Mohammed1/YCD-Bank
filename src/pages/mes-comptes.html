@@ -6,11 +6,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mes Comptes</title>
     <link rel="stylesheet" href="../styles/style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+        integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
 </head>
 
-<body class="bg-secondary">
+<body class="bg-secondary min-h-screen">
 
     <header>
 
@@ -28,46 +30,49 @@
             </div>
 
         </div>
-
     </header>
 
-    <div class="md:grid md:grid-cols-[25%_1fr]">
+    <div class="md:grid md:grid-cols-[16rem_1fr]">
 
-        <!-- Section -->
+        <!-- Aside -->
 
         <div class="sectioncontainer">
 
-            <section id="menu"
-                class="hidden z-50 md:w-1/4 md:inline-block h-full w-4/5 bg-primary fixed top-0 flex-col items-center pt-5">
+            <aside id="menu"
+                class="hidden flex flex-col md:block fixed top-0 left-0 w-4/5 md:w-64 h-screen bg-primary z-50">
 
-                <div class="flex w-full items-center justify-between md:justify-center md:pr-4 gap-5">
-
-                    <button class="md:hidden">
-                        <i id="close-menu" class="fa-solid fa-xmark text-white text-3xl"></i>
+                <div class="flex items-center justify-between md:justify-center p-5">
+                    <button id="close-menu" class="md:hidden">
+                        <i class="fa-solid fa-xmark text-white text-3xl"></i>
                     </button>
-
-                    <div class="w-44">
+                    <div class="w-32 md:w-40">
                         <img src="../assets/images/logo.png" alt="LOGO">
                     </div>
-
-                    <div class="min-w-12 md:hidden"></div>
-
+                    <div class="min-w-10 md:hidden"></div>
                 </div>
-                <div>
-                    <ul class="pt-7 text-3xl md:text-2xl text-white text-center flex flex-col gap-10">
-                        <li><a href="" class="gold border-b-2 pb-2">Mes Comptes</a></li>
-                        <li><a href="../pages/virements.html">Virements</a></li>
-                        <li><a href="../pages/paiements.html">Paiements</a></li>
-                        <li><a href="../pages/historique.html">Historique</a></li>
-                        <li><a href="../pages/beneficiaire.html">Bénéficiaire</a></li>
-                        <li><a href="../pages/conversion.html">Conversion Devises</a></li>
-                        <li><a href="../pages/carte.html">Cartes</a></li>
-                        <li><a href="../pages/compte-epargne.html">Compte Epargne</a></li>
+
+                <nav class="px-4 py-4">
+                    <ul class="text-lg text-white text-center  flex flex-col gap-4">
+                        <li><a href="../pages/mes-comptes.html"
+                                class="block py-2 gold  border-b-2 border-yellow-400 transition">Mes Comptes</a></li>
+                        <li><a href="../pages/virements.html"
+                                class="block py-2 hover:text-yellow-400 transition">Virements</a></li>
+                        <li><a href="../pages/paiements.html"
+                                class="block py-2 transition hover:text-yellow-400">Paiements</a></li>
+                        <li><a href="../pages/historique.html"
+                                class="block py-2 hover:text-yellow-400 transition">Historique</a></li>
+                        <li><a href="../pages/beneficiaire.html"
+                                class="block py-2 hover:text-yellow-400 transition">Bénéficiaire</a></li>
+                        <li><a href="../pages/conversion.html"
+                                class="block py-2 hover:text-yellow-400 transition">Conversion Devises</a></li>
+                        <li><a href="../pages/carte.html" class="block py-2 hover:text-yellow-400 transition">Cartes</a>
+                        </li>
+                        <li><a href="../pages/compte-epargne.html"
+                                class="block py-2 hover:text-yellow-400 transition">Compte Epargne</a></li>
                     </ul>
+                </nav>
 
-                </div>
-
-            </section>
+            </aside>
 
         </div>
 
@@ -77,7 +82,7 @@
 
             <main>
 
-                <div class="text-[#0F2647] text-4xl text-center md:text-start m-14 font-bold">
+                <div class="text-[#0F2647] text-4xl text-center md:text-start m-14 font-normal">
                     <h2>Tableau de Bord</h2>
                 </div>
 
@@ -221,7 +226,7 @@
                 </div>
 
             </main>
-            
+
         </div>
 
     </div>
