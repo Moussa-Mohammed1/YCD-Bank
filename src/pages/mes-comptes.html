@@ -12,7 +12,7 @@
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
 </head>
 
-<body class="bg-secondary">
+<body class="bg-secondary min-h-screen">
 
     <header>
 
@@ -30,16 +30,16 @@
             </div>
 
         </div>
-
     </header>
 
-    <div class="md:grid md:grid-cols-[25%_1fr]">
+    <div class="md:grid md:grid-cols-[16rem_1fr]">
 
         <!-- Aside -->
 
         <div class="sectioncontainer">
 
-            <aside id="menu" class="hidden md:block fixed top-0 left-0 w-4/5 md:w-64 h-screen bg-primary z-50">
+            <aside id="menu"
+                class="hidden flex flex-col md:block fixed top-0 left-0 w-4/5 md:w-64 h-screen bg-primary z-50">
 
                 <div class="flex items-center justify-between md:justify-center p-5">
                     <button id="close-menu" class="md:hidden">
@@ -53,8 +53,8 @@
 
                 <nav class="px-4 py-4">
                     <ul class="text-lg text-white text-center  flex flex-col gap-4">
-                        <li><a href="../pages/mes-comptes.html" class="block py-2 hover:text-yellow-400 transition">Mes
-                                Comptes</a></li>
+                        <li><a href="../pages/mes-comptes.html"
+                                class="block py-2 gold  border-b-2 border-yellow-400 transition">Mes Comptes</a></li>
                         <li><a href="../pages/virements.html"
                                 class="block py-2 hover:text-yellow-400 transition">Virements</a></li>
                         <li><a href="../pages/paiements.html"

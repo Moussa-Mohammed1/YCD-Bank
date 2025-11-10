@@ -9,17 +9,13 @@ open_menu.addEventListener('click', ()=>{
     openMenu(menu);
 });
 close_menu.addEventListener('click', ()=>{
-    menu.classList.remove("flex");
-    menu.classList.add("hidden");
+    closeMenu(menu);
+});
+document.addEventListener('click', (e) => {
+    if (window.innerWidth < 768) {
+        if (!menu.contains(e.target) && !open_menu.contains(e.target)) {
+            menu.classList.add('hidden');
+        }
+    }
 });
 
-
-const favoris_dots_menu =  document.getElementById("recharge-favoris-menu-dots");
-const favoris_menu = document.getElementById("recharge-favoris-menu");
-
-
-// document.addEventListener('click',(e)=>{
-//     if (!favoris_menu.classList.contains('hidden') && !favoris_menu.contains(e.target) && e.target !== favoris_dots_menu) {
-//         favoris_menu.classList.add('hidden');
-//     }
-// })
