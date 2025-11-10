@@ -8,58 +8,51 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="../styles/style.css">
 </head>
-<body class="bg-secondary">
-    <header>
-
-        <div class="flex items-center justify-between bg-primary w-full h-20 md:hidden">
-
-            <button id="open-menu" class="">
-                <i class="fa-solid fa-bars text-white text-5xl"></i>
+<body class="bg-secondary min-h-screen">
+    <header class="md:hidden">
+        <div class="flex items-center justify-between bg-primary w-full h-20 px-4">
+            <button id="open-menu">
+                <i class="fa-solid fa-bars text-white text-3xl"></i>
             </button>
-
-            <div class="">
-                <img class="scale-80" src="../assets/images/logo.png" alt="logo">
+            <div>
+                <img class="h-12" src="../assets/images/logo.png" alt="logo">
             </div>
-
-            <div class="min-w-16">
-            </div>
-
+            <div class="w-12"></div>
         </div>
-
     </header>
-    <section id="menu"
-        class="hidden z-50 md:w-1/4 md:block h-full w-4/5 bg-primary fixed top-0  flex-col items-center pt-5">
 
-        <div class="flex w-full items-center justify-between md:justify-center md:pr-4 gap-5">
-
-            <button class="md:hidden">
-                <i id="close-menu" class="fa-solid fa-xmark text-white text-3xl"></i>
+    <aside id="menu" class="hidden md:block fixed top-0 left-0 w-4/5 md:w-64 h-screen bg-primary z-50">
+        
+        <div class="flex items-center justify-between md:justify-center p-5">
+            <button 
+                id="close-menu" 
+                class="md:hidden">
+                <i 
+                    class="fa-solid fa-xmark text-white text-3xl"></i>
             </button>
-
-            <div class="w-44">
+            <div 
+                class="w-32 md:w-40">
                 <img src="../assets/images/logo.png" alt="LOGO">
             </div>
-
-            <div class="min-w-12 md:hidden"></div>
-
+            <div class="min-w-10 md:hidden"></div>
         </div>
+        
+        <nav class="px-4 py-4">
+            <ul class="text-lg text-white text-center  flex flex-col gap-2">
+                <li><a href="../pages/mes-comptes.html" class="block py-2 hover:text-yellow-400 transition">Mes Comptes</a></li>
+                <li><a href="../pages/virements.html" class="block py-2 hover:text-yellow-400 transition">Virements</a></li>
+                <li><a href="../pages/paiements.html" class="block py-2 transition hover:text-yellow-400">Paiements</a></li>
+                <li><a href="../pages/historique.html" class="block py-2 gold border-b-2 border-yellow-400 transition">Historique</a></li>
+                <li><a href="../pages/beneficiaire.html" class="block py-2 hover:text-yellow-400 transition">Bénéficiaire</a></li>
+                <li><a href="../pages/conversion.html" class="block py-2 hover:text-yellow-400 transition">Conversion Devises</a></li>
+                <li><a href="../pages/carte.html" class="block py-2 hover:text-yellow-400 transition">Cartes</a></li>
+                <li><a href="../pages/compte-epargne.html" class="block py-2 hover:text-yellow-400 transition">Compte Epargne</a></li>
+            </ul>
+        </nav>
+        
+    </aside>
 
-        <ul class="pt-7 text-3xl md:text-2xl text-white text-center flex flex-col gap-10">
-            <li><a href="" class="gold border-b-2 pb-2">Mes Comptes</a></li>
-            <li><a href="../pages/virements.html">Virements</a></li>
-            <li><a href="../pages/paiements.html">Paiements</a></li>
-            <li><a href="../pages/historique.html">Historique</a></li>
-            <li><a href="../pages/beneficiaire.html">Bénéfeciaire</a></li>
-            <li><a href="../pages/conversion.html">Conversion Devises</a></li>
-            <li><a href="../pages/carte.html">Cartes</a></li>
-        </ul>
-
-        </div>
-
-    </section>
-
-    <main 
-        class="p-4  flex flex-col gap-7 md:absolute md:w-8/12 md:right-16 md:top-16 drop-shadow-2xl ">
+    <main class="md:ml-64 min-h-screen p-4 md:p-8">
         <h1 
             class=" font-bold text-2xl text-center md:text-start ">Historique des transaction</h1>
         <div 
