@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
 </head>
-<body class="bg-secondary md:flex md:flex-row gap-70 ">
+<body class="bg-secondary min-h-screen">
     <header>
 
     <div class="flex items-center justify-between bg-primary w-full h-20 md:hidden">
@@ -26,30 +26,37 @@
 
     </div>
 </header>
-    <section 
-        id="menu"
-        class="hidden md:w-1/4 lg:block h-full w-4/5 bg-primary fixed top-0  flex-col items-center  pt-5 ">
-        <div class="flex flex-row pb-4 items-center">
-            <button class="md:hidden">
+   <aside id="menu" class="hidden md:block fixed top-0 left-0 w-4/5 md:w-64 h-screen bg-primary z-50">
+        
+        <div class="flex items-center justify-between md:justify-center p-5">
+            <button 
+                id="close-menu" 
+                class="md:hidden">
                 <i 
-                    id="close-menu"
-                class="fa-solid fa-xmark text-white text-5xl"></i>
+                    class="fa-solid fa-xmark text-white text-3xl"></i>
             </button>
-            <img src="../assets/images/logo.png" alt=""
-            class="scale-90">
+            <div 
+                class="w-32 md:w-40">
+                <img src="../assets/images/logo.png" alt="LOGO">
+            </div>
+            <div class="min-w-10 md:hidden"></div>
         </div>
-        <ul class="pt-7 text-3xl md:text-2xl text-white text-center flex flex-col gap-10">
-            <li><a href="" class="gold border-b-2 pb-2">Mes Comptes</a></li>
-            <li><a href="../pages/virements.html">Virements</a></li>
-            <li><a href="../pages/paiements.html">Paiements</a></li>
-            <li><a href="../pages/historique.html">Historique</a></li>
-            <li><a href="../pages/beneficiaire.html">Bénéfeciaire</a></li>
-            <li><a href="../pages/conversion.html">Conversion Devises</a></li>
-            <li><a href="../pages/carte.html">Cartes</a></li>
-        </ul>
-    </section>
-    <main 
-        class="p-4 md:absolute md:right-30 md:w-3/5">
+        
+        <nav class="px-4 py-4">
+            <ul class="text-lg text-white text-center  flex flex-col gap-4">
+                <li><a href="../pages/mes-comptes.html" class="block py-2 hover:text-yellow-400 transition">Mes Comptes</a></li>
+                <li><a href="../pages/virements.html" class="block py-2 hover:text-yellow-400 transition">Virements</a></li>
+                <li><a href="../pages/paiements.html" class="block py-2 transition hover:text-yellow-400">Paiements</a></li>
+                <li><a href="../pages/historique.html" class="block py-2 hover:text-yellow-400 transition">Historique</a></li>
+                <li><a href="../pages/beneficiaire.html" class="block py-2 hover:text-yellow-400 transition">Bénéficiaire</a></li>
+                <li><a href="../pages/conversion.html" class="block py-2 hover:text-yellow-400 transition">Conversion Devises</a></li>
+                <li><a href="../pages/carte.html" class="block py-2 hover:text-yellow-400 transition">Cartes</a></li>
+                <li><a href="../pages/compte-epargne.html" class="block py-2 hover:text-yellow-400 transition">Compte Epargne</a></li>
+            </ul>
+        </nav>
+        
+    </aside>
+    <main class="md:ml-64 min-h-screen p-4 md:p-8">
         <h1 class="capitalize font-bold text-2xl py-4 text-center lg:text-start">Recharge telecom et internet</h1>
         <div class="bg-white rounded-2xl p-4 drop-shadow-transparent shadow-xl">
             <h3 class="capitalize font-bold  pb-2 pt-3">operateur</h3>
@@ -60,11 +67,13 @@
             </select>
             <div class="relative w-5/5">
                 <h1 class="capitalize font-bold pb-2 pt-3">Montant</h1>
-                <input type="number" placeholder="000"
-                class="w-full border px-3 pr-12 py-2 text-xl" />
-                <span class="absolute right-3 top-1/2 text-xl pointer-events-none">
-                    MAD
-                </span>
+                <div class="flex flex-row justify-between w-full border px-3 pr-12 py-2 text-xl">
+                    <input type="text" placeholder="000"
+                        class="outline-none "/>
+                    <span class="text-xl pointer-events-none">
+                        MAD
+                    </span>
+                </div>
             </div>
             <div 
                 class="mt-10">
