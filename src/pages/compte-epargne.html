@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Comptes Epargne YCD</title>
+    <link rel="stylesheet" href="../styles/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+</head>
+<body class="bg-secondary">
+    <header class="flex flex-row bg-primary md:hidden h-20 justify-around">
+        <button id="open-menu">
+            <i 
+            class="fa-solid fa-bars text-white text-5xl"></i>
+        </button>
+        <img 
+            class="scale-60" src="../assets/images/logo.png" alt="">
+    </header>
+
+    <section 
+        id="menu"
+        class="hidden md:w-1/4 lg:block h-full w-4/5 bg-primary fixed top-0  flex-col items-center  pt-5 ">
+        <div class="flex flex-row pb-4 items-center">
+            <button class="md:hidden">
+                <i 
+                    id="close-menu"
+                class="fa-solid fa-xmark text-white text-5xl"></i>
+            </button>
+            <img src="../assets/images/logo.png" alt=""
+            class="scale-90">
+        </div>
+        <ul class="pt-7 text-3xl md:text-2xl text-white text-center flex flex-col gap-10">
+            <li><a href="" class="gold border-b-2 pb-2">Mes Comptes</a></li>
+            <li><a href="../pages/virements.html">Virements</a></li>
+            <li><a href="../pages/paiements.html">Paiements</a></li>
+            <li><a href="../pages/historique.html">Historique</a></li>
+            <li><a href="../pages/beneficiaire.html">Bénéfeciaire</a></li>
+            <li><a href="../pages/conversion.html">Conversion Devises</a></li>
+            <li><a href="../pages/carte.html">Cartes</a></li>
+        </ul>
+    </section>
+
+    <main class=" p-5 flex flex-col gap-7 lg:absolute lg:w-3/5 lg:right-20">
+        <div class="scale-up bg-compte-epargne rounded-2xl mt-6 shadow-2xl shadow-stone-400  h-55">
+            <h1 
+                class="text-3xl font-semibold pl-6 pt-6">Compte Epargne</h1>
+            <h2 class="text-2xl py-5 pl-6 pt-7 ">balance</h2>
+            <div class="bg-lime-500 w-4/5 p-3 rounded-xl hover:bg-amber-600 duration-300 cursor-pointer ml-12 flex flex-row justify-between items-center">
+                <p id="compte-epargne-balance" class=" text-white font-semibold">
+                10000<span> MAD</span></p>
+                <button
+                    id="compte-epargne-show"
+                    class=" cursor-pointer">
+                <i class="fa-solid fa-eye"></i>
+                </button>
+                <button 
+                    id="compte-epargne-show-hide" 
+                    class="hidden cursor-pointer">
+                <i class="fa-solid fa-eye-slash hidden"></i>
+                </button>
+            </div>
+        </div>
+        <div class="bg-white p-4 cursor-pointer rounded-xl shadow-2xl shadow-stone-400 ">
+            <h1 class="font-bold">RIB epargne</h1>
+            <div 
+                class="flex flex-row justify-between">
+                <p id="compte-epargne-rib" class="pt-3">**********************</p>
+                <button 
+                    id="compte-epargne-exporter"
+                    class="bg-amber-700 rounded-xl text-white p-2 cursor-cell hover:bg-lime-900 hover:scale-105 duration-700">
+                    Exporter PDF
+                </button>
+            </div>
+        </div>
+        <div class="bg-white p-2 rounded-xl shadow-2xl shadow-stone-400 ">
+            <h1 
+                class=" text-2xl pl-6 pt-2 font-bold">Virement Interne</h1>
+            <div class="bg-white p-2 rounded-xl flex flex-col gap-3">
+                <input type="text" name="compte-epargne-virements" placeholder="Compte Principale" disabled 
+                    class="w-5/5 border cursor-pointer  placeholder:text-black p-1 rounded-lg shadow-2xl shadow-gray-600 outline-none">
+                <input type="text" placeholder="Montant" name="compte-epargne-virements-montant" 
+                    class="w-5/5 border p-1 rounded-lg shadow-xl outline-none shadow-gray-300 focus:ring-blue-500 focus:ring-1">
+            </div>
+        </div>
+    </main>
+    
+    <script type="module" src="../js/pages/compte-epargne.js"></script>
+</body>
+</html>
