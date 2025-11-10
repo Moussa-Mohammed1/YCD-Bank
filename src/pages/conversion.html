@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+   <title>Conversion devises YCD</title>
+    <link rel="stylesheet" href="../styles/style.css">
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+</head>
+<body 
+    class="bg-secondary md:flex md:flex-row gap-70 ">
+    <header>
+
+        <div class="flex items-center justify-between bg-primary w-full h-20 md:hidden">
+
+            <button id="open-menu" class="">
+                <i class="fa-solid fa-bars text-white text-5xl"></i>
+            </button>
+
+            <div class="">
+                <img class="scale-80" src="../assets/images/logo.png" alt="logo">
+            </div>
+
+            <div class="min-w-16">
+            </div>
+
+        </div>
+    </header>
+    <section 
+        id="menu"
+        class="hidden md:w-1/4 lg:block h-full w-4/5 bg-primary fixed top-0  flex-col items-center  pt-5 ">
+        <div class="flex flex-row pb-4 items-center">
+            <button class="md:hidden">
+                <i 
+                    id="close-menu"
+                class="fa-solid fa-xmark text-white text-5xl"></i>
+            </button>
+            <img src="../assets/images/logo.png" alt=""
+            class="scale-90">
+        </div>
+        <ul class="pt-7 text-3xl md:text-2xl text-white text-center flex flex-col gap-10">
+            <li><a href="" class="gold border-b-2 pb-2">Mes Comptes</a></li>
+            <li><a href="../pages/virements.html">Virements</a></li>
+            <li><a href="../pages/paiements.html">Paiements</a></li>
+            <li><a href="../pages/historique.html">Historique</a></li>
+            <li><a href="../pages/beneficiaire.html">Bénéfeciaire</a></li>
+            <li><a href="../pages/conversion.html">Conversion Devises</a></li>
+            <li><a href="../pages/carte.html">Cartes</a></li>
+        </ul>
+    </section>
+    <div 
+        class=""></div>
+    <main 
+        class="md:absolute md:w-3/4 md:right-0">
+        <div 
+            class="bg-white w-full py-4">
+            <h1
+                class="text-2xl pl-5 font-bold">Conversion devises</h1>
+        </div>
+        <div
+            class="flex flex-col p-6 md:mt-28 md:w-5/6 md:absolute md:right-20 mt-15">
+            <div
+                class="bg-gray-400 p-3 h-30 rounded-sm flex flex-col justify-around">
+                
+                <h1
+                    class="text-2xl font-bold">Montant</h1>
+                <div
+                    class="bg-white flex flex-row justify-between text-xl p-2.5 rounded-sm">
+                    <input
+                        id="conversion-montant"
+                        class="gold outline-none" placeholder="11">
+                    <p
+                        class="bg-gold text-white text-lg px-1 rounded-sm">EUR</p>
+                </div>
+            </div>
+            <div
+                class="flex flex-row items-center justify-center">
+                <div 
+                    class="text-white bg-blue-950 aspect-square  w-fit h-fit p-2 hover:opacity-80 cursor-pointer rounded-full">
+                    <i class="fa-solid fa-money-bill-transfer text-lg"></i>
+                </div>
+            </div>
+            <div
+                class="bg-gray-400 p-3 rounded-sm h-35 flex flex-col justify-around">
+                <h1
+                    class="text-2xl font-bold"">Montant Converti</h1>
+                <div
+                    class="bg-white flex flex-row justify-between text-xl p-2.5 rounded-sm">
+                    <p 
+                        id="conversion-montant-converti" 
+                        class="gold">1100</p>
+                    <p 
+                        class="bg-gold text-white text-lg px-1 rounded-sm">DH</p>
+                </div>
+                
+            </div>
+            <p>Taux actuel : 
+                    <span 
+                        class="gold ">1 EUR = 10,90 DH</span></p>
+        </div>
+    </main>
+</body>
+</html>

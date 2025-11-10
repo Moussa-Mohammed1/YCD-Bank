@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>YCD BANK</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <link rel="stylesheet" href="../styles/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+        integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body>
+
+    <header class="flex flex-row bg-primary h-20 justify-around md:hidden">
+        <button id="recharge-menu">
+            <i class="fa-solid fa-bars text-white text-5xl"></i>
+        </button>
+        <img class="scale-60" src="../assets/images/logo.png" alt="">
+    </header>
+    <section>
+        <h1 class="px-6 py-2 text-xl"> Gérer les Bénéficiaires</h1>
+        <div class="flex justify-end mr-3 mt-3">
+            <button class="bg-[#26254F] text-white rounded-lg px-5 py-3 justify-end md:w-85 md:mr-9"> Ajouter un Bénéficiaire </button>
+        </div>
+        <div class="flex items-center gap-5 mt-6 ml-2 md:gap-16">
+            <div class="border w-max md:w-180 md:ml-7  flex items-center gap-2 py-1 rounded-lg pl-1">
+                <i class="fa-solid fa-magnifying-glass" style="color: #000000;"></i>
+                <input class="focus:outline-none w-40 md:w-72" type="search" placeholder="Rechercher bénéficiaire" />
+            </div>
+
+            <div>
+                <select name="trierpar" class="border rounded px-3 py-2 w-32 md:w-60">
+                    <option disabled selected>Trier par</option>
+                    <option>par ordre alphabétique (A-Z)</option>
+                    <option>Bénéficiaires actifs</option>
+                    <option>Bénéficiaires bloqués</option>
+                </select>
+            </div>
+        </div>
+
+    </section>
+    <section id="les-benefeciaire" class="grid grid-cols-1 md:grid-cols-2 gap-6 mt-6">
+        <div class="bg-white shadow-xl/30 rounded-lg p-4 flex justify-between items-center mb-4">
+
+            <div>
+                <p class="font-medium text-gray-800">Nom et Prénom</p>
+                <p class="text-sm text-gray-600">
+                    <span class="font-semibold">RIB</span> 2321 **** **** 5152
+                </p>
+            </div>
+
+
+            <div class="flex items-center gap-2">
+                <span class="bg-green-500 text-white text-xs px-3 py-1 rounded-full">
+                    Actif
+                </span>
+                <button class="bg-yellow-600 text-white p-2 rounded-lg">
+                    <i class="fa-solid fa-right-left"></i>
+                </button>
+            </div>
+        </div>
+
+    </section>
+
+
+</body>
+
+</html>
