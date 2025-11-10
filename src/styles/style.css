@@ -6,9 +6,29 @@
     background-color: #26254F;
 }
 
-body{
+.bg-secondary{
     font-family: 'Frank Ruhl Libre', serif;
+    background-color:#E1DFDF;
+}
+.gold{
+    color: #D5972C;
 }
 .benefeciaire-select{
     font-size: 9px;
+}
+.bg-gold{
+    background-color: #D5972C;
+}
+.show-menu{
+    animation: show-menu;
+    animation-duration: 0.7s;
+}
+@keyframes show-menu {
+    from{left: -300px;}
+    to{inset:0}
+}
+.bg-compte-epargne{
+    background:url('../assets/images/bg-compte-epargne.png');
+    background-position: center;
+    background-size: cover;
 }
