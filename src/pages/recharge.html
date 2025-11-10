@@ -68,8 +68,8 @@
             <div class="relative w-5/5">
                 <h1 class="capitalize font-bold pb-2 pt-3">Montant</h1>
                 <div class="flex flex-row justify-between w-full border px-3 pr-12 py-2 text-xl">
-                    <input type="text" placeholder="000"
-                        class="outline-none "/>
+                    <input type="text" name="recharge-montant" placeholder="000"
+                        class="outline-none"/>
                     <span class="text-xl pointer-events-none">
                         MAD
                     </span>
@@ -82,10 +82,12 @@
                 <div   
                     class="flex flex-row justify-between">
                     
-                    <input type="text" placeholder="Ex :0600000000"
+                    <input 
+                        name="recharge-numero" type="text" placeholder="Ex :0600000000"
                         class=" w-2/5 border  py-2 px-1">
                 
                 <button  
+                    id="ajouter-favoris-btn"
                     class="bg-black text-white rounded-2xl text-xs px-3">
                     Ajouter aux Favoris
                 </button>

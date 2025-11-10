@@ -1,3 +1,5 @@
+// manipulate the menu appearance
+
 const open_menu = document.getElementById("open-menu");
 const close_menu = document.getElementById("close-menu");
 const menu = document.getElementById("menu");
@@ -19,3 +21,12 @@ document.addEventListener('click', (e) => {
     }
 });
 
+// user interaction controle phase
+
+let favoris = [];
+
+const operator = document.getElementsByName("recharge-operateur");
+const montant = document.getElementsByName("recharge-montant");
+const numero = document.getElementsByName("recharge-numero");
+
+const add_favoris = document.getElementById("ajouter-favoris-btn");
