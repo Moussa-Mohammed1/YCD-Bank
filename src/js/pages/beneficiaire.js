@@ -12,3 +12,8 @@ close_menu.addEventListener('click', ()=>{
     menu.classList.remove("flex");
     menu.classList.add("hidden");
 });
+
+
+
+// contenu beneficiare
+
