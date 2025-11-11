@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carte</title>
+    <link rel="stylesheet" href="../styles/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+        integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+</head>
+
+<body class="bg-white md:bg-[#E1DFDF]" style="font-family: 'Frank Ruhl Libre', serif;">
+
+    <header>
+
+        <div class="flex items-center justify-between bg-primary w-full h-20 md:hidden">
+
+            <button id="open-menu" class="">
+                <i class="fa-solid fa-bars text-white text-5xl"></i>
+            </button>
+
+            <div class="">
+                <img class="scale-80" src="../assets/images/logo.png" alt="logo">
+            </div>
+
+            <div class="min-w-16">
+            </div>
+
+        </div>
+
+    </header>
+
+    <div class="md:grid md:grid-cols-[16rem_1fr]">
+
+        <!-- Aside -->
+
+        <div class="sectioncontainer">
+
+            <aside id="menu"
+                class="hidden flex flex-col md:block fixed top-0 left-0 w-4/5 md:w-64 h-screen bg-primary z-50">
+
+                <div class="flex items-center justify-between md:justify-center p-5">
+                    <button id="close-menu" class="md:hidden">
+                        <i class="fa-solid fa-xmark text-white text-3xl"></i>
+                    </button>
+                    <div class="w-32 md:w-40">
+                        <img src="../assets/images/logo.png" alt="LOGO">
+                    </div>
+                    <div class="min-w-10 md:hidden"></div>
+                </div>
+
+                <nav class="px-4 py-4">
+                    <ul class="text-lg text-white text-center  flex flex-col gap-4">
+                        <li><a href="../pages/mes-comptes.html"
+                                class="block py-2 hover:text-yellow-400 transition">Mes Comptes</a></li>
+                        <li><a href="../pages/virements.html"
+                                class="block py-2 hover:text-yellow-400 transition">Virements</a></li>
+                        <li><a href="../pages/paiements.html"
+                                class="block py-2 transition hover:text-yellow-400">Paiements</a></li>
+                        <li><a href="../pages/historique.html"
+                                class="block py-2 hover:text-yellow-400 transition">Historique</a></li>
+                        <li><a href="../pages/beneficiaire.html"
+                                class="block py-2 hover:text-yellow-400 transition">Bénéficiaire</a></li>
+                        <li><a href="../pages/conversion.html"
+                                class="block py-2 hover:text-yellow-400 transition">Conversion Devises</a></li>
+                        <li><a href="../pages/carte.html" class="block py-2 gold  border-b-2 border-yellow-400 transition">Cartes</a>
+                        </li>
+                        <li><a href="../pages/compte-epargne.html"
+                                class="block py-2 hover:text-yellow-400 transition">Compte Epargne</a></li>
+                    </ul>
+                </nav>
+
+            </aside>
+
+        </div>
+
+        <!-- Main -->
+
+        <div class="maincontainer">
+
+            <main>
+
+                <div class="text-[#0F2647] text-4xl text-center md:text-left my-10 md:m-14 font-normal">
+                    <h2>Carte Bancaire Virtuele</h2>
+                </div>
+
+                <form method="get" class="w-full">
+
+                    <div
+                        class="container-cart-options md:flex-row md:flex-wrap md:justify-center flex flex-col items-center gap-10">
+
+                        <!-- big parent carte! -->
+
+                        <div
+                            class="bg-[#E1DFDF] md:bg-transparent w-11/12 rounded-2xl drop-shadow-xl p-8 flex flex-col items-center gap-8 md:max-w-[631px]">
+
+                            <div id="card-bancaire-active">
+
+                                <img src="../assets/images/carte-ycd.png" alt="carte bancaire">
+
+                            </div>
+
+                            <div id="card-bancaire-bloque" class="hidden">
+
+                                <img src="../assets/images/carte-ycd-bloque.png" alt="carte bancaire bloque">
+
+                            </div>
+
+                            <div class="activation-cart h-0 flex justify-between w-full">
+
+                                <div class="activation-title text-[#0F2647]">
+                                    <h3>Activer la carte</h3>
+                                </div>
+
+                                <div class="toggle-button-active">
+
+                                    <label class="items-center me-5 cursor-pointer">
+                                        <input type="checkbox" name="checkbox" id="toggle-activation" value="checked"
+                                            class="sr-only peer" checked>
+                                        <div
+                                            class="relative w-11 h-6 bg-gray-200 rounded-full peer dark:bg-gray-700 peer-focus:ring-4 peer-focus:ring-yellow-300 dark:peer-focus:ring-yellow-800 peer-checked:after:translate-x-full rtl:peer-checked:after:-translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-0.5 after:start-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all dark:border-gray-600 peer-checked:bg-yellow-400 dark:peer-checked:bg-yellow-400">
+                                        </div>
+                                    </label>
+
+                                </div>
+
+                            </div>
+
+                            <div class="bloque-temporairement w-full">
+
+                                <div class="text-[#0F2647] text-right text-xs">
+                                    <h4>Bloquer temporairement</h4>
+                                </div>
+
+                            </div>
+
+                            <div class="plafond-container w-full">
+
+                                <div class="plafond-current flex bg-[#e9e9e9] justify-between p-4">
+
+                                    <div class="title-plafond text-[#0F2647] text-lg">
+                                        <h4>Plafond de carte</h4>
+                                    </div>
+
+                                    <div id="plafond-now" class="text-[#D5972C] text-xl">
+                                        16000 DHS
+                                    </div>
+
+                                </div>
+
+                                <div class="plafond-modify bg-[#ffffff] p-4">
+
+                                    <div class="plafond-title-modified flex justify-between w-full">
+
+                                        <div class="title-plafond text-[#0F2647] text-lg">
+                                            <h4>Modifier le Plafond</h4>
+                                        </div>
+
+                                        <div id="plafond-modified" class="text-[#D5972C] text-xl">
+                                            0 DHS
+                                        </div>
+
+                                    </div>
+
+                                    <div class="input-range">
+
+                                        <input id="plafond-range" type="range" min="0" max="16000" name="range-value"
+                                            value="0" step="1000"
+                                            class="w-full h-2 bg-gray-100 rounded-lg appearance-none cursor-pointer dark:bg-gray-100 accent-yellow-500">
+
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+                            <div id="confirm-button">
+
+                                <input
+                                    class="text-white bg-[#26254F] p-2 w-30 rounded-lg active:scale-95 active:bg-[#0a083c]"
+                                    type="submit" value="Confirm">
+
+                            </div>
+
+
+
+                        </div>
+
+                    </div>
+
+                </form>
+
+            </main>
+
+        </div>
+
+    </div>
+
+    <script type="module" src="../js/pages/carte.js"></script>
+</body>
+
+</html>
