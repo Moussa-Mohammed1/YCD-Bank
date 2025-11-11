@@ -2,129 +2,123 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>YCD BANK</title>
-    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
-    <link rel="stylesheet" href="../styles/style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
-        integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
-        crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>YCD BANK</title>
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  <link rel="stylesheet" href="../styles/style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+    integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 
-<body class="bg-secondary ">
-
-    <header>
-
-        <div class="flex items-center justify-between bg-primary w-full h-20 md:hidden">
-
-            <button id="open-menu" class="">
-                <i class="fa-solid fa-bars text-white text-5xl"></i>
-            </button>
-
-            <div class="">
-                <img class="scale-80" src="../assets/images/logo.png" alt="logo">
-            </div>
-
-            <div class="min-w-16">
-            </div>
-
-        </div>
-
-    </header>
-
-
-
-    <div class="md:grid md:grid-cols-[25%_1fr]">
-
-        <!-- Section -->
-
-        <div class="sectioncontainer">
-
-            <section id="menu"
-                class="hidden z-50 md:w-1/4 md:inline-block h-full w-4/5 bg-primary fixed top-0 flex-col items-center pt-5">
-
-                <div class="flex w-full items-center justify-between md:justify-center md:pr-4 gap-5">
-
-                    <button class="md:hidden">
-                        <i id="close-menu" class="fa-solid fa-xmark text-white text-3xl"></i>
-                    </button>
-
-                    <div class="w-44">
-                        <img src="../assets/images/logo.png" alt="LOGO">
-                    </div>
-
-                    <div class="min-w-12 md:hidden"></div>
-
-                </div>
-                <div>
-                    <ul class="pt-7 text-3xl md:text-2xl text-white text-center flex flex-col gap-10">
-                        <li><a href="" class="gold border-b-2 pb-2">Mes Comptes</a></li>
-                        <li><a href="../pages/virements.html">Virements</a></li>
-                        <li><a href="../pages/paiements.html">Paiements</a></li>
-                        <li><a href="../pages/historique.html">Historique</a></li>
-                        <li><a href="../pages/beneficiaire.html">Bénéficiaire</a></li>
-                        <li><a href="../pages/conversion.html">Conversion Devises</a></li>
-                        <li><a href="../pages/carte.html">Cartes</a></li>
-                        <li><a href="../pages/compte-epargne.html">Compte Epargne</a></li>
-                    </ul>
-
-                </div>
-
-            </section>
-
-        </div>
-        <!-- Main -->
-
-        <div class="maincontainer">
-
-            <main>
-
-                <section>
-                    <h1 class="text-2xl p-8 text-sky-900">Effectuer un virement</h1>
-                    <div>
-                        <h5 class="pl-12">Bénéficiare</h5>
-                        <div
-                            class=" bg-stone-50 border w-max md:w-220 md:ml-7 md:h-14 flex items-center gap-5 py-1 rounded-lg pl-1 mx-auto">
-                            <i class="fa-solid fa-magnifying-glass" style="color: #000000;"></i>
-                            <input class="focus:outline-none w-100 md:w-132" type="search"
-                                placeholder="Rechercher bénéficiaire" />
-                        </div>
-                    </div>
-
-                    <div class="mt-13">
-                        <h5 class="pl-12">Montant</h5>
-                        <div
-                            class=" bg-stone-50 border w-110 md:w-220 md:ml-7 md:h-15 flex items-center gap-5 py-1 rounded-lg pl-1 mx-auto">
-
-                            <input class="focus:outline-none w-100 md:w-132" type="text" placeholder="     0000000" />
-                            <h5 class="mr-5 md:ml-124">MAD</h5>
-                        </div>
-                    </div>
-
-                    <div class="mt-7">
-                        <h5 class="pl-12">Compte Source</h5>
-                        <div
-                            class=" bg-stone-50 border w-110 md:w-220 md:ml-7 md:h-15 flex items-center gap-5 py-1 rounded-lg pl-1 mx-auto">
-                            <i class="fa-solid fa-lock" style="color: #000000;"></i>
-                            <input class="focus:outline-none w-100 md:w-132" placeholder="Compte Principale" />
-                            <h5 class="mr-19  md:ml-12 flex whitespace-nowrap gap-3">
-                                Solde disponible : <span id="solde">00000</span> MAD </h5>
-                           
-                        </div>
-                    </div>
-                </section>
-
-
-            </main>
-
-        </div>
-
+<body class="bg-secondary min-h-screen">
+  <header class="md:hidden">
+    <div class="flex items-center justify-between bg-primary w-full h-20 px-4">
+      <button id="open-menu">
+        <i class="fa-solid fa-bars text-white text-3xl"></i>
+      </button>
+      <div>
+        <img class="h-12" src="../assets/images/logo.png" alt="logo">
+      </div>
+      <div class="w-12"></div>
     </div>
 
+  </header>
 
+  <aside id="menu" class="hidden md:block fixed top-0 left-0 w-4/5 md:w-64 h-screen bg-primary z-50">
 
-    <script type="module" src="../js/pages/beneficiaire.js"></script>
+    <div class="flex items-center justify-between md:justify-center p-5">
+      <button id="close-menu" class="md:hidden">
+        <i class="fa-solid fa-xmark text-white text-3xl"></i>
+      </button>
+      <div class="w-32 md:w-40">
+        <img src="../assets/images/logo.png" alt="LOGO">
+      </div>
+      <div class="min-w-10 md:hidden"></div>
+    </div>
+
+    <nav class="px-4 py-4">
+      <ul class="text-lg text-white text-center  flex flex-col gap-2">
+        <li><a href="../pages/mes-comptes.html" class="block py-2 hover:text-yellow-400 transition">Mes
+            Comptes</a></li>
+        <li><a href="../pages/virements.html"
+            class="block py-2 gold border-b-2 hover:text-yellow-400 transition">Virements</a>
+        </li>
+        <li><a href="../pages/paiements.html" class="block py-2  hover:text-yellow-400 transition">Paiements</a>
+        </li>
+        <li><a href="../pages/historique.html" class="block py-2 hover:text-yellow-400 transition">Historique</a></li>
+        <li><a href="../pages/beneficiaire.html" class="block py-2 hover:text-yellow-400 transition">Bénéficiaire</a>
+        </li>
+        <li><a href="../pages/conversion.html" class="block py-2 hover:text-yellow-400 transition">Conversion
+            Devises</a></li>
+        <li><a href="../pages/carte.html" class="block py-2 hover:text-yellow-400 transition">Cartes</a></li>
+        <li><a href="../pages/compte-epargne.html" class="block py-2 hover:text-yellow-400 transition">Compte
+            Epargne</a></li>
+      </ul>
+    </nav>
+
+  </aside>
+
+  <main class="md:ml-64 min-h-screen p-4 md:p-8">
+
+    <section class="max-w-md mx-auto md:max-w-4xl">
+      <h1 class="text-2xl mb-6 text-sky-900 text-center md:text-left">Effectuer un virement</h1>
+
+      <!-- Bénéficiaire -->
+      <div class="mb-6">
+        <h5 class="text-gray-700 mb-2">Bénéficiaire</h5>
+        <div class="bg-stone-50 border flex items-center gap-3 py-2 px-3 rounded-lg w-full">
+          <i class="fa-solid fa-magnifying-glass text-gray-700"></i>
+          <input class="focus:outline-none w-full bg-transparent" type="search" placeholder="Rechercher bénéficiaire" />
+        </div>
+      </div>
+
+      <!-- Montant -->
+      <div class="mb-6">
+        <h5 class="text-gray-700 mb-2">Montant</h5>
+        <div class="bg-stone-50 border flex items-center gap-3 py-2 px-3 rounded-lg w-full">
+          <input class="focus:outline-none w-full bg-transparent" type="text" placeholder="0000000" />
+          <span class="text-gray-700 font-semibold">MAD</span>
+        </div>
+      </div>
+
+      <!-- Compte Source -->
+      <div class="mb-6">
+        <h5 class="text-gray-700 mb-2">Compte Source</h5>
+        <div
+          class="bg-stone-50 border flex flex-col md:flex-row md:items-center gap-2 md:gap-5 py-2 px-3 rounded-lg w-full">
+          <div class="flex items-center gap-3 w-full md:w-auto">
+            <i class="fa-solid fa-lock text-gray-700"></i>
+            <select id="compte-source" class="focus:outline-none bg-transparent w-full text-gray-700">
+              <option disabled selected>Compte Principal</option>
+            </select>
+          </div>
+          <p class="text-sm whitespace-nowrap text-gray-700">
+            Solde disponible : <span id="solde">00000</span> MAD
+          </p>
+        </div>
+      </div>
+
+      <!-- Motif -->
+      <div class="mb-8">
+        <h5 class="text-gray-700 mb-2">Motif</h5>
+        <div class="bg-stone-50 border flex items-center py-2 px-3 rounded-lg w-full">
+          <input class="focus:outline-none w-full bg-transparent" type="text" placeholder="Motif du virement" />
+        </div>
+      </div>
+
+      <!-- Bouton -->
+      <div class="flex justify-center md:w-190">
+        <button class="bg-[#26254F] text-white rounded-lg px-6 py-3 w-full md:w-auto">
+          Effectuer le virement
+        </button>
+      </div>
+    </section>
+
+  </main>
+
+  <script type="module" src="../js/pages/beneficiaire.js"></script>
 </body>
 
 </html>
