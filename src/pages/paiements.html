@@ -62,13 +62,15 @@
          
             <div class="w-full lg:w-2/5 bg-amber-50 rounded-2xl p-8 shadow-lg flex flex-col items-center justify-center">
                 <h2 class="gold font-bold text-2xl mb-3">Solde Principale</h2>
-                <p class="gold font-bold text-4xl" id="paiements-solde-principale">10000 <span class="text-2xl">MAD</span></p>
+                <p class="gold font-bold text-4xl" id="paiements-solde-principale">0 <span class="text-2xl">MAD</span></p>
             </div>
 
             <div class="w-full lg:w-3/5 bg-white rounded-2xl shadow-lg p-6">
+
                 <h2 class="text-2xl font-bold mb-6">Formulaire du facture</h2>
                 
-                <form class="flex flex-col gap-5">
+                <form class="flex flex-col gap-5" id="paiements-form">
+
                     <select id="paiements-facture-select" class="border border-gray-300 rounded-lg py-3 px-4 focus:outline-none focus:ring-2 focus:ring-blue-500">
                         <option value="electricite">Electricité</option>
                         <option value="eau">Eau potable</option>
@@ -77,22 +79,25 @@
                         <option value="assurance">Assurance</option>
                     </select>
                     
-                    <input type="text" placeholder="Reference du facture" class="border border-gray-300 rounded-lg py-3 px-4 focus:outline-none focus:ring-2 focus:ring-blue-500">
+                    <input type="text" id="facture-refernce" placeholder="Reference du facture" class="border border-gray-300 rounded-lg py-3 px-4 focus:outline-none focus:ring-2 focus:ring-blue-500">
                     
                     <div class="border border-gray-300 rounded-lg py-3 px-4 flex items-center gap-2">
-                        <input type="number" placeholder="Montant" class="flex-1 outline-none">
+                        <input id="montant" type="number" placeholder="Montant" class="flex-1 outline-none">
                         <span class="text-gray-600 font-medium">MAD</span>
                     </div>
                     
                     <div class="flex justify-center mt-4">
-                        <button type="button" class="bg-blue-950 text-white px-10 py-3 rounded-full hover:bg-black hover:scale-105 transition duration-300 font-medium">
-                            Payer
-                        </button>
+                        <input type="submit" value="Payer" class="bg-blue-950 text-white px-10 py-3 rounded-full hover:bg-black hover:scale-105 transition duration-300 font-medium">
                     </div>
+
                 </form>
+
             </div>
+
         </div>
+
     </main>
-    
+
+<script type="module" src="../js/pages/paiements.js"></script>
 </body>
 </html>
