@@ -57,11 +57,11 @@
         </nav>
         
     </aside>
-    <main class="md:ml-64 min-h-screen p-4 md:p-8">
+    <main class="md:ml-64 min-h-screen  md:p-8">
         <div id="favoris-forum" class="hidden fixed inset-0 flex justify-center items-center bg-black/70 z-50">
         </div>
         <div
-            class="flex flex-row gap-2 md:gap-4 text-sm md:text-2xl py-5">
+            class="flex flex-row gap-2 md:gap-4 text-xl pt-1 pl-1 md:text-2xl">
             <a 
                 class="text-black hover:text-blue-400 duration-500"
                 href="../pages/mes-comptes.html">Mes comptes</a>
@@ -80,8 +80,8 @@
             </select>
             <div class="relative w-5/5">
                 
-                <div class="flex flex-row justify-between">
-                    <div class="flex flex-col ">
+                <div class="flex flex-row flex-wrap justify-between">
+                    <div class="flex flex-col w-36">
                         <h1 class="capitalize font-bold pb-2 pt-3">Montant</h1>
                         <select name="recharge-montant" id="recharge-montant" class="flex flex-row justify-between w-5/5 border rounded-sm px-3 pr-12 h-10 text-xl">
                             <option value="10">10</option>
@@ -94,9 +94,13 @@
                             <option value="500">500</option>
                         </select>
                     </div>
-                    <div class="w-2/5 flex flex-col">
+                    <div  class="flex flex-col justify-between">
+                        <label for="Nom" class="capitalize font-bold pb-2 pt-3">Nom</label>
+                        <input type="text" name="nom" placeholder="Nom" class="border-black border rounded-sm outline-none px-3  py-2">
+                    </div>
+                    <div class="w-5/5 flex flex-col ">
                         <h1  class="capitalize font-bold pb-2 pt-3">Offre</h1>
-                        <select name="" id="recharge-offre"  class="border-black border-2 bg-secondary outline-none px-3 rounded-sm py-2">
+                        <select name="" id="recharge-offre"  class="border-black border rounded-sm outline-none px-3  py-2">
                             <option value="recharge-internet">internet</option>
                             <option value="recharge-telecom">telecom</option>
                         </select>
@@ -107,6 +111,7 @@
                 class="mt-10">
                 <h2 
                         class="text-sm font-bold py-2">Numero à recharger</h2>
+            
             <div class=" flex flex-row justify-between">
                 <div   
                     class="flex relative flex-row justify-between">
