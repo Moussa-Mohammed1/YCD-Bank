@@ -35,6 +35,14 @@
     from{scale: 0.7;}
     to{scale:1;}
 }
+.showNotification{
+    animation:notification;
+    animation-duration:1s;
+}
+@keyframes notification{
+    from{right: -300px;}
+    to{right: 1rem;}
+}
 .bg-compte-epargne{
     background: url('../assets/images/bg-compte-epargne.png');
     background-position: center;
