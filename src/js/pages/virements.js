@@ -11,17 +11,13 @@ close_menu?.addEventListener('click', () => closeMenu(menu));
 let currentUser;
 
 function loadCurrentUser() {
-    const raw = localStorage.getItem("currentUser");
+    const raw = localStorage.getItem("user");
     if (raw) {
         currentUser = JSON.parse(raw);
     } else {
-        currentUser = {
-            nomcomplet: "Utilisateur Test",
-            solde: 100000,
-            beneficiaire: [],
-            historique: []
-        };
-        localStorage.setItem("currentUser", JSON.stringify(currentUser));
+        alert("Aucun utilisateur connecté");
+        window.location.href = "../../index.html";
+        return;
     }
 }
 loadCurrentUser();
@@ -39,7 +35,6 @@ function updateSolde() {
 }
 updateSolde();
 
-// Suggestions dynamiques
 const suggestions = document.createElement("div");
 suggestions.className = "absolute bg-white border w-full rounded shadow z-50 max-h-48 overflow-y-auto top-full mt-1";
 suggestions.style.display = "none";
@@ -57,8 +52,7 @@ inputBenef.addEventListener("input", () => {
         return;
     }
 
-    // Filtrer les bénéficiaires actifs uniquement
-    const results = currentUser.beneficiaire.filter(b =>
+    const results = currentUser.benefeciaire.filter(b =>
         !b.blocked && (b.nom.toLowerCase().includes(text) || b.prenom.toLowerCase().includes(text))
     );
 
@@ -85,7 +79,6 @@ inputBenef.addEventListener("input", () => {
     suggestions.style.display = "block";
 });
 
-// Fermer les suggestions si on clique ailleurs
 document.addEventListener("click", (e) => {
     if (!parentDiv.contains(e.target)) {
         suggestions.style.display = "none";
@@ -97,7 +90,6 @@ btnVirement.addEventListener("click", () => {
     const montant = parseFloat(inputMontant.value);
     const motif = inputMotif.value.trim();
 
-    // Validation des champs
     if (!text) {
         alert("Veuillez sélectionner un bénéficiaire !");
         return;
@@ -118,8 +110,7 @@ btnVirement.addEventListener("click", () => {
         return;
     }
 
-    // Rechercher le bénéficiaire (insensible à la casse)
-    const benef = currentUser.beneficiaire.find(b =>
+    const benef = currentUser.benefeciaire.find(b =>
         `${b.nom} ${b.prenom}`.toLowerCase() === text.toLowerCase()
     );
 
@@ -128,44 +119,34 @@ btnVirement.addEventListener("click", () => {
         return;
     }
 
-    // Vérifier si le bénéficiaire est bloqué
     if (benef.blocked) {
         alert("Ce bénéficiaire est bloqué !");
         return;
     }
 
-    // Effectuer le virement
     currentUser.solde -= montant;
 
-    // Ajouter à l'historique
-    currentUser.historique.push({
-        date: new Date().toLocaleString('fr-FR', {
-            day: '2-digit',
-            month: '2-digit',
-            year: 'numeric',
-            hour: '2-digit',
-            minute: '2-digit'
-        }),
+    const transaction = {
+        id: Date.now(),
         type: "Virement",
+        destinataire: `${benef.nom} ${benef.prenom}`,
+        rib: benef.rib,
         montant: montant,
         motif: motif,
-        beneficiaire: `${benef.nom} ${benef.prenom}`,
-        rib: benef.rib
-    });
+        date: new Date().toISOString(),
+        statut: "Réussie"
+    };
 
-    // Sauvegarder dans localStorage
-    localStorage.setItem("currentUser", JSON.stringify(currentUser));
+    currentUser.historique.unshift(transaction);
+    currentUser.transactions.unshift(transaction);
+
+    localStorage.setItem("user", JSON.stringify(currentUser));
     
-    // Mettre à jour l'affichage du solde
     updateSolde();
 
     alert(`Virement effectué avec succès !\n\nMontant : ${montant} MAD\nBénéficiaire : ${benef.nom} ${benef.prenom}\nNouveau solde : ${currentUser.solde.toFixed(2)} MAD`);
 
-    // Réinitialiser le formulaire
     inputBenef.value = "";
     inputMontant.value = "";
     inputMotif.value = "";
 });
-
-console.log("Script virements.js chargé");
-console.log("Utilisateur actuel:", currentUser);

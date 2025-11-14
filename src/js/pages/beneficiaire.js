@@ -9,24 +9,15 @@ let listBeneficiaires = [];
 let currentUser;
 
 function loadCurrentUser() {
-    const raw = localStorage.getItem("currentUser");
+    const raw = localStorage.getItem("user");
     if (raw) {
         currentUser = JSON.parse(raw);
     } else {
-        currentUser = {
-            nomcomplet: "Utilisateur Test",
-            password: "",
-            solde: 100000,
-            rib: "",
-            beneficiaire: [],  // ✅ CORRIGÉ
-            rib_epargne: "",  // ✅ CORRIGÉ aussi (epargne pas epagrne)
-            historique: [],
-            recharges: { favoris: [], historique: [] },
-            transactions: []
-        };
-        localStorage.setItem("currentUser", JSON.stringify(currentUser));
+        alert("Aucun utilisateur connecté");
+        window.location.href = "../../index.html";
+        return;
     }
-    listBeneficiaires = currentUser.beneficiaire || [];  // ✅ CORRIGÉ
+    listBeneficiaires = currentUser.benefeciaire || [];
 }
 
 loadCurrentUser();
@@ -34,7 +25,6 @@ loadCurrentUser();
 open_menu?.addEventListener('click', () => openMenu(menu));
 close_menu?.addEventListener('click', () => closeMenu(menu));
 
-// modal
 const btnAdd = document.getElementById("btn-add-beneficiaire");
 const modal = document.getElementById("modal-beneficiaire");
 const btnClose = document.getElementById("close-modal");
@@ -59,7 +49,7 @@ function creercarte(beneficiaire) {
             <button id="menu-btn-${beneficiaire.id}" class="absolute top-2 right-2 text-gray-500">
                 <i class="fa-solid fa-ellipsis-vertical"></i>
             </button>
-            <div id="menu-${beneficiaire.id}" class="menu-options absolute top-8 right-2 bg-white shadow-lg rounded-lg border hidden">
+            <div id="menu-${beneficiaire.id}" class="menu-options absolute top-8 right-2 bg-white shadow-lg rounded-lg border hidden z-10">
                 <button class="block w-full text-left px-4 py-2 hover:bg-gray-100 btn-bloquer">Bloquer/Débloquer</button>
                 <button class="block w-full text-left px-4 py-2 hover:bg-gray-100 btn-supprimer">Supprimer</button>
             </div>
@@ -81,9 +71,9 @@ function creercarte(beneficiaire) {
     `;
 
     const btn = card.querySelector(`#menu-btn-${beneficiaire.id}`);
-    const menu = card.querySelector(`#menu-${beneficiaire.id}`);
+    const menuEl = card.querySelector(`#menu-${beneficiaire.id}`);
 
-    btn.addEventListener("click", () => menu.classList.toggle("hidden"));
+    btn.addEventListener("click", () => menuEl.classList.toggle("hidden"));
 
     card.querySelector(".btn-bloquer").addEventListener("click", () => bloquerDebloquer(beneficiaire.id));
     card.querySelector(".btn-supprimer").addEventListener("click", () => supprimerCarte(beneficiaire.id));
@@ -101,8 +91,8 @@ function bloquerDebloquer(id) {
     status.classList.toggle("bg-green-500");
     status.classList.toggle("bg-red-500");
 
-    currentUser.beneficiaire = listBeneficiaires;  // ✅ CORRIGÉ
-    localStorage.setItem("currentUser", JSON.stringify(currentUser));
+    currentUser.benefeciaire = listBeneficiaires;
+    localStorage.setItem("user", JSON.stringify(currentUser));
 
     if (selectTri.value === "par ordre alphabétique (A-Z)") triAlphabetique();
     else if (selectTri.value === "Bénéficiaires actifs") triActifs();
@@ -112,8 +102,8 @@ function bloquerDebloquer(id) {
 function supprimerCarte(id) {
     if (!confirm("Voulez-vous vraiment supprimer ce bénéficiaire ?")) return;
     listBeneficiaires = listBeneficiaires.filter(b => b.id !== id);
-    currentUser.beneficiaire = listBeneficiaires;  // ✅ CORRIGÉ
-    localStorage.setItem("currentUser", JSON.stringify(currentUser));
+    currentUser.benefeciaire = listBeneficiaires;
+    localStorage.setItem("user", JSON.stringify(currentUser));
     renderAllCards(listBeneficiaires);
 }
 
@@ -137,6 +127,12 @@ function AddBenef() {
         return; 
     }
 
+    const ribRegex = /^[0-9]{24}$/;
+    if (!ribRegex.test(rib)) {
+        alert("Le RIB doit contenir exactement 24 chiffres !");
+        return;
+    }
+
     const nouveau = { 
         id: Date.now().toString(), 
         nom, 
@@ -146,17 +142,18 @@ function AddBenef() {
     };
 
     listBeneficiaires.push(nouveau);
-    currentUser.beneficiaire = listBeneficiaires;  // ✅ CORRIGÉ
-    localStorage.setItem("currentUser", JSON.stringify(currentUser));
+    currentUser.benefeciaire = listBeneficiaires;
+    localStorage.setItem("user", JSON.stringify(currentUser));
 
     renderAllCards(listBeneficiaires);
 
     modal.classList.add("hidden");
     modal.classList.remove("flex");
     formBenef.reset();
+    
+    alert(`Bénéficiaire ${nom} ${prenom} ajouté avec succès !`);
 }
 
-// Tri
 function triAlphabetique() { 
     renderAllCards([...listBeneficiaires].sort((a, b) => a.nom.localeCompare(b.nom))); 
 }
@@ -176,7 +173,6 @@ selectTri?.addEventListener("change", () => {
     else renderAllCards(listBeneficiaires);
 });
 
-// Recherche
 const inputSearch = document.getElementById("search-benef");
 inputSearch?.addEventListener("input", () => {
     const text = inputSearch.value.trim().toLowerCase();
@@ -186,13 +182,18 @@ inputSearch?.addEventListener("input", () => {
     ));
 });
 
-// Affichage
 function renderAllCards(list) {
     beneficiairecontainer.innerHTML = "";
+    if (list.length === 0) {
+        beneficiairecontainer.innerHTML = `
+            <div class="text-center text-gray-500 py-8">
+                <i class="fa-solid fa-users text-4xl mb-4"></i>
+                <p>Aucun bénéficiaire trouvé</p>
+            </div>
+        `;
+        return;
+    }
     list.forEach(b => creercarte(b));
 }
 
 renderAllCards(listBeneficiaires);
-
-console.log("Script beneficiaire.js chargé");
-console.log("Bénéficiaires chargés:", listBeneficiaires);
