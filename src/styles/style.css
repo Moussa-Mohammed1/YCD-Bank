@@ -32,11 +32,14 @@
     animation-duration: 0.5s;
 }
 @keyframes scale-up{
-    from{scale: 0.2;}
+    from{scale: 0.7;}
     to{scale:1;}
 }
 .bg-compte-epargne{
     background: url('../assets/images/bg-compte-epargne.png');
     background-position: center;
     background-size: cover;
+}
+.input-error {
+    border: 2px solid red;
 }
