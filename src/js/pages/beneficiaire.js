@@ -18,15 +18,15 @@ function loadCurrentUser() {
             password: "",
             solde: 100000,
             rib: "",
-            benefeciaire: [],
-            rib_epagrne: "",
+            beneficiaire: [],  // ✅ CORRIGÉ
+            rib_epargne: "",  // ✅ CORRIGÉ aussi (epargne pas epagrne)
             historique: [],
             recharges: { favoris: [], historique: [] },
             transactions: []
         };
         localStorage.setItem("currentUser", JSON.stringify(currentUser));
     }
-    listBeneficiaires = currentUser.benefeciaire || [];
+    listBeneficiaires = currentUser.beneficiaire || [];  // ✅ CORRIGÉ
 }
 
 loadCurrentUser();
@@ -101,7 +101,7 @@ function bloquerDebloquer(id) {
     status.classList.toggle("bg-green-500");
     status.classList.toggle("bg-red-500");
 
-    currentUser.benefeciaire = listBeneficiaires;
+    currentUser.beneficiaire = listBeneficiaires;  // ✅ CORRIGÉ
     localStorage.setItem("currentUser", JSON.stringify(currentUser));
 
     if (selectTri.value === "par ordre alphabétique (A-Z)") triAlphabetique();
@@ -112,7 +112,7 @@ function bloquerDebloquer(id) {
 function supprimerCarte(id) {
     if (!confirm("Voulez-vous vraiment supprimer ce bénéficiaire ?")) return;
     listBeneficiaires = listBeneficiaires.filter(b => b.id !== id);
-    currentUser.benefeciaire = listBeneficiaires;
+    currentUser.beneficiaire = listBeneficiaires;  // ✅ CORRIGÉ
     localStorage.setItem("currentUser", JSON.stringify(currentUser));
     renderAllCards(listBeneficiaires);
 }
@@ -132,12 +132,21 @@ function AddBenef() {
     const prenom = inputPrenom.value.trim();
     const rib = inputRib.value.trim();
 
-    if (!nom || !prenom || !rib) { alert("Nom, Prénom et Rib sont obligatoires !"); return; }
+    if (!nom || !prenom || !rib) { 
+        alert("Nom, Prénom et RIB sont obligatoires !"); 
+        return; 
+    }
 
-    const nouveau = { id: Date.now().toString(), nom, prenom, rib, blocked: false };
+    const nouveau = { 
+        id: Date.now().toString(), 
+        nom, 
+        prenom, 
+        rib, 
+        blocked: false 
+    };
 
     listBeneficiaires.push(nouveau);
-    currentUser.benefeciaire = listBeneficiaires;
+    currentUser.beneficiaire = listBeneficiaires;  // ✅ CORRIGÉ
     localStorage.setItem("currentUser", JSON.stringify(currentUser));
 
     renderAllCards(listBeneficiaires);
@@ -148,9 +157,15 @@ function AddBenef() {
 }
 
 // Tri
-function triAlphabetique() { renderAllCards([...listBeneficiaires].sort((a, b) => a.nom.localeCompare(b.nom))); }
-function triActifs() { renderAllCards(listBeneficiaires.filter(b => !b.blocked)); }
-function triBloques() { renderAllCards(listBeneficiaires.filter(b => b.blocked)); }
+function triAlphabetique() { 
+    renderAllCards([...listBeneficiaires].sort((a, b) => a.nom.localeCompare(b.nom))); 
+}
+function triActifs() { 
+    renderAllCards(listBeneficiaires.filter(b => !b.blocked)); 
+}
+function triBloques() { 
+    renderAllCards(listBeneficiaires.filter(b => b.blocked)); 
+}
 
 const selectTri = document.querySelector("select[name='trierpar']");
 selectTri?.addEventListener("change", () => {
@@ -165,7 +180,10 @@ selectTri?.addEventListener("change", () => {
 const inputSearch = document.getElementById("search-benef");
 inputSearch?.addEventListener("input", () => {
     const text = inputSearch.value.trim().toLowerCase();
-    renderAllCards(listBeneficiaires.filter(b => b.nom.toLowerCase().startsWith(text) || b.prenom.toLowerCase().startsWith(text)));
+    renderAllCards(listBeneficiaires.filter(b => 
+        b.nom.toLowerCase().startsWith(text) || 
+        b.prenom.toLowerCase().startsWith(text)
+    ));
 });
 
 // Affichage
@@ -175,3 +193,6 @@ function renderAllCards(list) {
 }
 
 renderAllCards(listBeneficiaires);
+
+console.log("Script beneficiaire.js chargé");
+console.log("Bénéficiaires chargés:", listBeneficiaires);
