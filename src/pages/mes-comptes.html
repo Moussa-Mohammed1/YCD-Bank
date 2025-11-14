@@ -15,32 +15,23 @@
 <body class="bg-secondary min-h-screen">
 
     <header>
-
         <div class="flex items-center justify-between bg-primary w-full h-20 md:hidden">
-
             <button id="open-menu" class="">
                 <i class="fa-solid fa-bars text-white text-5xl"></i>
             </button>
-
             <div class="">
                 <img class="scale-80" src="../assets/images/logo.png" alt="logo">
             </div>
-
-            <div class="min-w-16">
-            </div>
-
+            <div class="min-w-16"></div>
         </div>
     </header>
 
     <div class="md:grid md:grid-cols-[16rem_1fr]">
 
         <!-- Aside -->
-
         <div class="sectioncontainer">
-
             <aside id="menu"
                 class="hidden flex flex-col md:block fixed top-0 left-0 w-4/5 md:w-64 h-screen bg-primary z-50">
-
                 <div class="flex items-center justify-between md:justify-center p-5">
                     <button id="close-menu" class="md:hidden">
                         <i class="fa-solid fa-xmark text-white text-3xl"></i>
@@ -52,174 +43,137 @@
                 </div>
 
                 <nav class="px-4 py-4">
-            <ul class="text-lg text-white text-center flex flex-col gap-4">
-                <li><a href="../pages/mes-comptes.html" class="block py-2 bg-yellow-500 bg-opacity-70 text-black rounded-sm transition">Mes Comptes</a></li>
-                <li><a href="../pages/virements.html" class="block py-2 hover:bg-yellow-400 hover:rounded-sm  hover:text-black duration-500">Virements</a></li>
-                <li><a href="../pages/paiements.html" class="block py-2 hover:bg-yellow-400 hover:rounded-sm  hover:text-black duration-500">Paiements</a></li>
-                <li><a href="../pages/historique.html" class="block py-2 hover:bg-yellow-400 hover:rounded-sm  hover:text-black duration-500">Historique</a></li>
-                <li><a href="../pages/beneficiaire.html" class="block py-2 hover:bg-yellow-400 hover:rounded-sm  hover:text-black duration-500">Bénéficiaire</a></li>
-                <li><a href="../pages/conversion.html" class="block py-2 hover:bg-yellow-400 hover:rounded-sm  hover:text-black duration-500">Conversion Devises</a></li>
-                <li><a href="../pages/carte.html" class="block py-2 hover:bg-yellow-400 hover:rounded-sm  hover:text-black duration-500">Cartes</a></li>
-                <li><a href="../pages/compte-epargne.html" class="block py-2 hover:bg-yellow-400 hover:rounded-sm  hover:text-black duration-500">Compte Epargne</a></li>
-            </ul>
-        </nav>
-
+                    <ul class="text-lg text-white text-center flex flex-col gap-4">
+                        <li><a href="../pages/mes-comptes.html" class="block py-2 bg-yellow-500 bg-opacity-70 text-black rounded-sm transition">Mes Comptes</a></li>
+                        <li><a href="../pages/virements.html" class="block py-2 hover:bg-yellow-400 hover:rounded-sm  hover:text-black duration-500">Virements</a></li>
+                        <li><a href="../pages/paiements.html" class="block py-2 hover:bg-yellow-400 hover:rounded-sm  hover:text-black duration-500">Paiements</a></li>
+                        <li><a href="../pages/historique.html" class="block py-2 hover:bg-yellow-400 hover:rounded-sm  hover:text-black duration-500">Historique</a></li>
+                        <li><a href="../pages/beneficiaire.html" class="block py-2 hover:bg-yellow-400 hover:rounded-sm  hover:text-black duration-500">Bénéficiaire</a></li>
+                        <li><a href="../pages/conversion.html" class="block py-2 hover:bg-yellow-400 hover:rounded-sm  hover:text-black duration-500">Conversion Devises</a></li>
+                        <li><a href="../pages/carte.html" class="block py-2 hover:bg-yellow-400 hover:rounded-sm  hover:text-black duration-500">Cartes</a></li>
+                        <li><a href="../pages/compte-epargne.html" class="block py-2 hover:bg-yellow-400 hover:rounded-sm  hover:text-black duration-500">Compte Epargne</a></li>
+                    </ul>
+                </nav>
             </aside>
-
         </div>
 
         <!-- Main -->
-
         <div class="maincontainer">
+            <main class="p-4 md:p-8">
 
-            <main 
-                class="flex flex-wrap flex-row">
-
-                <div class="text-[#0F2647] text-4xl text-center md:text-start m-14 font-normal">
+                <!-- Titre -->
+                <div class="text-[#0F2647] text-3xl md:text-4xl mb-8 font-normal">
                     <h2>Tableau de Bord</h2>
                 </div>
 
-                <div
-                    class="container-comptes md:flex-row md:flex-wrap md:justify-center flex flex-col items-center gap-10">
+                <!-- Container principal avec grid layout -->
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-7xl">
 
-                    <div
-                        class="bg-white w-11/12 h-60 rounded-2xl drop-shadow-xl p-8 flex flex-col items-center gap-8 md:max-w-[631px]">
-
-                        <div class="text-[#0F2647] text-4xl text-center font-medium">
+                    <!-- Solde Principal - Première ligne, première colonne -->
+                    <div class="bg-white rounded-2xl drop-shadow-xl p-6 md:p-8 flex flex-col gap-6">
+                        <div class="text-[#0F2647] text-xl md:text-2xl font-medium">
                             <h1>Solde Principal</h1>
                         </div>
 
-                        <!-- Mad and displaySolde -->
-
-                        <div class="md:flex md:flex-row md:gap-[123px] flex flex-col gap-8">
-
-                            <div class="sold flex items-center gap-2">
-
-                                <div class="text-[#D5972C] text-4xl text-center font-bold" id="solde-compte-principal">
+                        <div class="flex flex-col md:flex-row items-center justify-between gap-4">
+                            <div class="flex items-center gap-2">
+                                <div class="text-[#D5972C] text-3xl font-bold" id="solde-compte-principal">
                                     ******
                                 </div>
-
                                 <div>
-                                    <h2 class="text-[#D5972C] text-4xl text-center font-bold">MAD</h2>
+                                    <h2 class="text-[#D5972C] text-4xl font-bold">MAD</h2>
                                 </div>
-
                             </div>
 
-                            <div class="buttoncontainer">
-
-                                <button
-                                    class="text-white bg-[#26254F] p-3 px-5 w-52 rounded-full active:scale-95 active:bg-[#0a083c] flex justify-start gap-3">
-                                    <img src="../assets/images/Eye.png" alt="eye icon">
-                                    <span>Afficher Solde</span>
-                                </button>
-
-                            </div>
-
+                            <button class="text-white bg-[#26254F] p-3 px-5 rounded-full active:scale-95 active:bg-[#0a083c] flex items-center gap-3">
+                                <img src="../assets/images/Eye.png" alt="eye icon">
+                                <span>Afficher Solde</span>
+                            </button>
                         </div>
-
                     </div>
 
-                    <!-- Acces rapide container -->
-                    <div
-                        class="bg-white  w-11/12 h-40 rounded-2xl drop-shadow-xl p-3 flex flex-col items-center gap-4 md:gap-9 md:p-6 md:max-w-[469px] md:h-60">
-
-                        <div class="text-[#0F2647] md:text-3xl text-2xl text-center font-bold">
+                    <!-- Accès rapide - Première ligne, deuxième colonne -->
+                    <div class="bg-white rounded-2xl drop-shadow-xl p-6 md:p-8 flex flex-col gap-4">
+                        <div class="text-[#0F2647] text-2xl md:text-3xl font-bold text-center">
                             <h2>Accès rapide</h2>
                         </div>
 
-                        <div class="Quick-links-mescomptes">
+                        <div class="flex justify-center gap-6">
+                            <a href="virements.html" class="flex flex-col items-center gap-2">
+                                <img class="active:scale-95 w-12 h-12" src="../assets/images/Virment.png" alt="virement logo">
+                                <p class="text-[#0F2647] text-sm">Virements</p>
+                            </a>
 
-                            <ul class="flex justify-between gap-7">
+                            <a href="paiements.html" class="flex flex-col items-center gap-2">
+                                <img class="active:scale-95 w-12 h-12" src="../assets/images/Paiment.png" alt="paiement logo">
+                                <p class="text-[#0F2647] text-sm">Paiements</p>
+                            </a>
 
-                                <li>
-                                    <a href="virements.html"><img class="active:scale-95"
-                                            src="../assets/images/Virment.png" alt="virement logo"></a>
-                                </li>
+                            <a href="recharge.html" class="flex flex-col items-center gap-2">
+                                <img class="active:scale-95 w-12 h-12" src="../assets/images/recharge.png" alt="recharge logo">
+                                <p class="text-[#0F2647] text-sm">Recharge</p>
+                            </a>
 
-                                <li>
-                                    <a href="paiements.html"><img class="active:scale-95"
-                                            src="../assets/images/Paiment.png" alt="paiement logo"></a>
-                                </li>
-
-                                <li>
-                                    <a href="recharge.html"><img class="active:scale-95"
-                                            src="../assets/images/recharge.png" alt="recharge logo"></a>
-                                </li>
-
-                                <li>
-                                    <a href="historique.html"><img class="active:scale-95"
-                                            src="../assets/images/Hestorique.png" alt="historique logo"></a>
-                                </li>
-
-                            </ul>
-
+                            <a href="historique.html" class="flex flex-col items-center gap-2">
+                                <img class="active:scale-95 w-12 h-12" src="../assets/images/Hestorique.png" alt="historique logo">
+                                <p class="text-[#0F2647] text-sm">Historique</p>
+                            </a>
                         </div>
-
-                        <div class="Quick-links-labels text-[#0F2647] flex gap-5">
-                            <p>Virements</p>
-                            <p>Paiements</p>
-                            <p>Recharge</p>
-                            <p>Historique</p>
-                        </div>
-
                     </div>
 
-                    <div
-                        class="md:max-w-[545px] md:h-[153px] md:p-12 bg-white w-11/12 h-20 rounded-2xl drop-shadow-xl p-3 px-4">
-
-                        <div class="text-[#0F2647] text-xl">
-                            <h2>RIB Principal</h2>
+                    <div class="bg-white rounded-2xl drop-shadow-xl p-6 md:p-8 flex flex-col gap-3">
+                        <div class="text-[#0F2647] text-xl font-medium">
+                            <h2>RIB Principale</h2>
                         </div>
-
-                        <div class="rib-principal-container flex justify-between">
-
+                        <div class="flex justify-between items-center">
                             <div id="rib-principal" class="text-[#0F2647] text-lg">
                                 2321 * * * * * * * * 5152
                             </div>
-
-                            <div>
-
-                                <button
-                                    class="text-white bg-[#26254F] p-1 w-20 rounded-full active:scale-95 active:bg-[#0a083c]">
-                                    <span>Exporter</span>
-                                </button>
-
-                            </div>
-
+                            <button class="text-white bg-[#26254F] py-2 px-5 rounded-full active:scale-95 active:bg-[#0a083c]">
+                                <span>Exporter</span>
+                            </button>
                         </div>
-
                     </div>
 
-                    <div
-                        class="md:max-w-[545px] md:h-[153px] md:p-12 bg-white w-11/12 h-20 rounded-2xl drop-shadow-xl p-3 px-4">
-
-                        <div class="text-[#0F2647] text-xl">
+                    <div class="bg-white rounded-2xl drop-shadow-xl p-6 md:p-8 flex flex-col gap-3">
+                        <div class="text-[#0F2647] text-xl font-medium">
                             <h2>RIB Épargne</h2>
                         </div>
-
-                        <div class="rib-epargne-container flex justify-between">
-
+                        <div class="flex justify-between items-center">
                             <div id="rib-epargne" class="text-[#0F2647] text-lg">
                                 2321 * * * * * * * * 5152
                             </div>
-
-                            <div>
-
-                                <button
-                                    class="text-white bg-[#26254F] p-1 w-20 rounded-full active:scale-95 active:bg-[#0a083c]">
-                                    <span>Exporter</span>
-                                </button>
-
-                            </div>
-
+                            <button class="text-white bg-[#26254F] py-2 px-5 rounded-full active:scale-95 active:bg-[#0a083c]">
+                                <span>Exporter</span>
+                            </button>
                         </div>
-
                     </div>
 
                 </div>
 
-            </main>
+                <div class="mt-8 bg-white rounded-2xl drop-shadow-xl p-6 md:p-8 max-w-7xl">
+                    <div class="text-[#0F2647] text-xl md:text-2xl font-medium mb-4">
+                        <h2>Dernière Transaction</h2>
+                    </div>
+                    
+                    <div class="overflow-x-auto">
+                        <table class="w-full">
+                            <thead>
+                                <tr class="border-b border-gray-200">
+                                    <th class="text-left py-3 px-4 text-[#0F2647]">Type</th>
+                                    <th class="text-left py-3 px-4 text-[#0F2647]">Date</th>
+                                    <th class="text-left py-3 px-4 text-[#0F2647]">Montant</th>
+                                    <th class="text-left py-3 px-4 text-[#0F2647]">Status</th>
+                                </tr>
+                            </thead>
+                            <tbody id="transactions-body">
+                                
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
 
+            </main>
         </div>
 
     </div>

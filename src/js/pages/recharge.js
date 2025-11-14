@@ -24,6 +24,7 @@ document.addEventListener('click', (e) => {
 const operator = document.getElementById("recharge-operateur");
 const montant = document.getElementById("recharge-montant");
 const numero = document.getElementById("recharge-numero");
+const nomInput = document.querySelector('input[name="nom"]');
 const add_favoris = document.getElementById("ajouter-favoris-btn");
 const recharger = document.getElementById("recharger-btn");
 const favoris_forum = document.getElementById("favoris-forum");
@@ -88,7 +89,7 @@ function clearError() {
 
 function showNotification(message, type = 'success') {
     const notification = document.createElement('div');
-    notification.className = `fixed top-4 right-4 px-6 py-3 rounded-lg text-white z-50 ${
+    notification.className = `fixed top-4 right-4 px-6 py-3 rounded-lg showNotification text-white z-50 ${
         type === 'success' ? 'bg-green-500' : 'bg-red-500'
     }`;
     notification.textContent = message;
@@ -136,6 +137,7 @@ function addOrUpdateFavoris() {
     const operatorValue = operator.value;
     const montantValue = parseInt(montant.value);
     const numeroValue = numero.value.trim();
+    const nomValue = nomInput.value.trim();
     const offreValue = offre.value;
     
     if (!numeroValue) {
@@ -154,6 +156,7 @@ function addOrUpdateFavoris() {
     
     const favori = {
         numero: numeroValue,
+        nom: nomValue || "Sans nom",
         operator: operatorValue,
         operatorNom: OPERATORS[operatorValue],
         montant: montantValue,
@@ -189,6 +192,7 @@ function displayFavoris() {
         
         favoriDiv.innerHTML = `
             <p class="font-semibold text-sm md:text-base">${favori.numero}</p>
+            <p class="text-gray-800 text-sm md:text-base">${favori.nom || 'Sans nom'}</p>
             <p class="text-gray-600 text-sm md:text-base">${favori.operatorNom}</p>
             <p class="text-blue-600 font-bold text-sm md:text-base">${favori.montant} MAD</p>
             <p class="text-xs md:text-sm text-gray-500">${favori.offre === 'recharge-internet' ? 'Internet' : 'Telecom'}</p>
@@ -255,6 +259,8 @@ function editFavori(index) {
     
     add_favoris.innerHTML = '<i class="fa-solid fa-check pr-2"></i>Mettre à jour';
     add_favoris.classList.add('bg-blue-600');
+    
+    window.scrollTo({ top: 0, behavior: 'smooth' });
 }
 
 function deleteFavori(index) {
@@ -267,6 +273,7 @@ function deleteFavori(index) {
         showNotification('Favori supprimé', 'success');
     }
 }
+
 function resetEditMode() {
     isEditMode = false;
     editingIndex = -1;
@@ -276,6 +283,7 @@ function resetEditMode() {
 
 function clearInputs() {
     numero.value = '';
+    nomInput.value = '';
     operator.selectedIndex = 0;
     montant.selectedIndex = 0;
     offre.selectedIndex = 0;
@@ -333,7 +341,9 @@ function effectuerRecharge() {
         `Recharge de ${montantValue} MAD effectuée avec succès vers ${numeroValue}`,
         'success'
     );
+    
     clearInputs();
+    
 }
 
 add_favoris.addEventListener('click', addOrUpdateFavoris);
@@ -349,7 +359,9 @@ numero.addEventListener('blur', () => {
 });
 
 function init() {
+    
     loadUserData();
+    
     if (!currentUser) {
         currentUser = {
             nom: "Utilisateur Test",
@@ -368,13 +380,18 @@ function init() {
             historique: []
         };
     }
+    
     if (!currentUser.recharges.favoris) {
         currentUser.recharges.favoris = [];
     }
+    
     if (!currentUser.recharges.historique) {
         currentUser.recharges.historique = [];
     }
+    
     saveUserData();
     displayFavoris();
 }
+
 document.addEventListener('DOMContentLoaded', init);
+
