@@ -401,5 +401,4 @@ function init() {
     
     displayFavoris();
 }
-
 document.addEventListener('DOMContentLoaded', init);
