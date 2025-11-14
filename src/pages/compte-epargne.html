@@ -7,42 +7,54 @@
     <link rel="stylesheet" href="../styles/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
 </head>
-<body class="bg-secondary">
-    <header class="flex flex-row bg-primary md:hidden h-20 justify-around">
-        <button id="open-menu">
-            <i 
-            class="fa-solid fa-bars text-white text-5xl"></i>
-        </button>
-        <img 
-            class="scale-60" src="../assets/images/logo.png" alt="">
+<body class="bg-secondary min-h-screen">
+    <header class="md:hidden">
+        <div class="flex items-center justify-between bg-primary w-full h-20 px-4">
+            <button id="open-menu">
+                <i class="fa-solid fa-bars text-white text-3xl"></i>
+            </button>
+            <div>
+                <img class="h-12" src="../assets/images/logo.png" alt="logo">
+            </div>
+            <div class="w-12"></div>
+        </div>
     </header>
 
-    <section 
-        id="menu"
-        class="hidden md:w-1/4 lg:block h-full w-4/5 bg-primary fixed top-0  flex-col items-center  pt-5 ">
-        <div class="flex flex-row pb-4 items-center">
-            <button class="md:hidden">
+    <aside id="menu" class="hidden flex flex-col md:block fixed top-0 left-0 w-4/5 md:w-64 h-screen bg-primary z-50">
+        
+        <div class="flex items-center justify-between md:justify-center p-5">
+            <button 
+                id="close-menu" 
+                class="md:hidden">
                 <i 
-                    id="close-menu"
-                class="fa-solid fa-xmark text-white text-5xl"></i>
+                    class="fa-solid fa-xmark text-white text-3xl"></i>
             </button>
-            <img src="../assets/images/logo.png" alt=""
-            class="scale-90">
+            <div 
+                class="w-32 md:w-40">
+                <img src="../assets/images/logo.png" alt="LOGO">
+            </div>
+            <div class="min-w-10 md:hidden"></div>
         </div>
-        <ul class="pt-7 text-3xl md:text-2xl text-white text-center flex flex-col gap-10">
-            <li><a href="" class="gold border-b-2 pb-2">Mes Comptes</a></li>
-            <li><a href="../pages/virements.html">Virements</a></li>
-            <li><a href="../pages/paiements.html">Paiements</a></li>
-            <li><a href="../pages/historique.html">Historique</a></li>
-            <li><a href="../pages/beneficiaire.html">Bénéfeciaire</a></li>
-            <li><a href="../pages/conversion.html">Conversion Devises</a></li>
-            <li><a href="../pages/carte.html">Cartes</a></li>
-        </ul>
-    </section>
+        
+        <nav class="px-4 py-4">
+            <ul class="text-lg text-white text-center flex flex-col gap-4">
+                <li><a href="../pages/mes-comptes.html" class="block py-2 hover:bg-yellow-400 hover:rounded-sm  hover:text-black duration-500">Mes Comptes</a></li>
+                <li><a href="../pages/virements.html" class="block py-2 hover:bg-yellow-400 hover:rounded-sm  hover:text-black duration-500">Virements</a></li>
+                <li><a href="../pages/paiements.html" class="block py-2 hover:bg-yellow-400 hover:rounded-sm  hover:text-black duration-500">Paiements</a></li>
+                <li><a href="../pages/historique.html" class="block py-2 hover:bg-yellow-400 hover:rounded-sm  hover:text-black duration-500">Historique</a></li>
+                <li><a href="../pages/beneficiaire.html" class="block py-2 hover:bg-yellow-400 hover:rounded-sm  hover:text-black duration-500">Bénéficiaire</a></li>
+                <li><a href="../pages/conversion.html" class="block py-2 hover:bg-yellow-400 hover:rounded-sm  hover:text-black duration-500">Conversion Devises</a></li>
+                <li><a href="../pages/carte.html" class="block py-2 hover:bg-yellow-400 hover:rounded-sm  hover:text-black duration-500">Cartes</a></li>
+                <li><a href="../pages/compte-epargne.html" class="block py-2 bg-yellow-500 bg-opacity-70 text-black rounded-sm transition">Compte Epargne</a></li>
+            </ul>
+        </nav>
+        
+    </aside>
+    <main class="md:ml-64 min-h-screen p-4 md:p-8 flex flex-col gap-7">
 
-    <main class=" p-5 flex flex-col gap-7 lg:absolute lg:w-3/5 lg:right-20">
-        <div class="bg-compte-epargne rounded-2xl mt-6 shadow-2xl shadow-stone-400  h-55">
+        <div class="scale-up bg-compte-epargne rounded-2xl mt-6 drop-shadow-xl  h-55">
             <h1 
                 class="text-3xl font-semibold pl-6 pt-6">Compte Epargne</h1>
             <h2 class="text-2xl py-5 pl-6 pt-7 ">balance</h2>
@@ -61,26 +73,34 @@
                 </button>
             </div>
         </div>
-        <div class="bg-white p-4 rounded-xl shadow-2xl shadow-stone-400 ">
+        <div class="bg-white p-4 cursor-pointer rounded-xl drop-shadow-xl">
             <h1 class="font-bold">RIB epargne</h1>
             <div 
                 class="flex flex-row justify-between">
                 <p id="compte-epargne-rib" class="pt-3">**********************</p>
                 <button 
                     id="compte-epargne-exporter"
-                    class="bg-amber-700 rounded-xl text-white p-2 cursor-cell hover:bg-lime-900 hover:scale-105 duration-700">
+                    class="bg-black rounded-xl text-white p-2 cursor-cell hover:bg-lime-900 hover:scale-105 duration-700">
                     Exporter PDF
                 </button>
             </div>
         </div>
-        <div class="bg-white p-2 rounded-xl shadow-2xl shadow-stone-400 ">
+        <div class="bg-white p-2 rounded-xl flex flex-col justify-center gap-4">
             <h1 
                 class=" text-2xl pl-6 pt-2 font-bold">Virement Interne</h1>
             <div class="bg-white p-2 rounded-xl flex flex-col gap-3">
                 <input type="text" name="compte-epargne-virements" placeholder="Compte Principale" disabled 
-                    class="w-5/5 border cursor-pointer  placeholder:text-black p-1 rounded-lg shadow-2xl shadow-gray-600 outline-none">
+                    class="w-5/5 border cursor-pointer  placeholder:text-black p-1 rounded-lg outline-none">
                 <input type="text" placeholder="Montant" name="compte-epargne-virements-montant" 
-                    class="w-5/5 border p-1 rounded-lg shadow-xl outline-none shadow-gray-300 focus:ring-blue-500 focus:ring-1">
+                    class="w-5/5 border p-1 rounded-lg outline-none focus:ring-blue-500 focus:ring-1">
+            </div>
+            <div 
+                class="flex flex-row items-center justify-center">
+                <button
+                    id="epargne-virement"
+                    class="bg-blue-950 cursor-pointer hover:px-3 duration-300 font-bold text-sm text-white py-2 rounded-3xl px-2">
+                    Effectuer le virement
+                </button>
             </div>
         </div>
     </main>

@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Facture YCD</title>
+    <link rel="stylesheet" href="../styles/style.css">
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    
+</head>
+
+<body class="bg-secondary min-h-screen">
+    <header class="md:hidden">
+        <div class="flex items-center justify-between bg-primary w-full h-20 px-4">
+            <button id="open-menu">
+                <i class="fa-solid fa-bars text-white text-3xl"></i>
+            </button>
+            <div>
+                <img class="h-12" src="../assets/images/logo.png" alt="logo">
+            </div>
+            <div class="w-12"></div>
+        </div>
+    </header>
+
+
+    <aside id="menu" class="hidden flex flex-col md:block fixed top-0 left-0 w-4/5 md:w-64 h-screen bg-primary z-50">
+        
+        <div class="flex items-center justify-between md:justify-center p-5">
+            <button 
+                id="close-menu" 
+                class="md:hidden">
+                <i 
+                    class="fa-solid fa-xmark text-white text-3xl"></i>
+            </button>
+            <div 
+                class="w-32 md:w-40">
+                <img src="../assets/images/logo.png" alt="LOGO">
+            </div>
+            <div class="min-w-10 md:hidden"></div>
+        </div>
+        
+        <nav class="px-4 py-4">
+            <ul class="text-lg text-white text-center flex flex-col gap-4">
+                <li><a href="../pages/mes-comptes.html" class="block py-2 hover:bg-yellow-400 hover:rounded-sm  hover:text-black duration-500">Mes Comptes</a></li>
+                <li><a href="../pages/virements.html" class="block py-2 hover:bg-yellow-400 hover:rounded-sm  hover:text-black duration-500">Virements</a></li>
+                <li><a href="../pages/paiements.html" class="block py-2 bg-yellow-500 bg-opacity-70 text-black rounded-sm transition">Paiements</a></li>
+                <li><a href="../pages/historique.html" class="block py-2 hover:bg-yellow-400 hover:rounded-sm  hover:text-black duration-500">Historique</a></li>
+                <li><a href="../pages/beneficiaire.html" class="block py-2 hover:bg-yellow-400 hover:rounded-sm  hover:text-black duration-500">Bénéficiaire</a></li>
+                <li><a href="../pages/conversion.html" class="block py-2 hover:bg-yellow-400 hover:rounded-sm  hover:text-black duration-500">Conversion Devises</a></li>
+                <li><a href="../pages/carte.html" class="block py-2 hover:bg-yellow-400 hover:rounded-sm  hover:text-black duration-500">Cartes</a></li>
+                <li><a href="../pages/compte-epargne.html" class="block py-2 hover:bg-yellow-400 hover:rounded-sm  hover:text-black duration-500">Compte Epargne</a></li>
+            </ul>
+        </nav>
+        
+    </aside>
+
+    <main class="md:ml-64 min-h-screen p-4 md:p-8">
+        <h1 class="text-3xl font-bold mb-8">Paiements des factures</h1>
+        
+        <div class="flex flex-col lg:flex-row-reverse gap-6 lg:gap-12 items-start justify-center max-w-6xl">
+         
+            <div class="w-full lg:w-2/5 bg-amber-50 rounded-2xl p-8 shadow-lg flex flex-col items-center justify-center">
+                <h2 class="gold font-bold text-2xl mb-3">Solde Principale</h2>
+                <p class="gold font-bold text-4xl" id="paiements-solde-principale">0 <span class="text-2xl">MAD</span></p>
+            </div>
+
+            <div class="w-full lg:w-3/5 bg-white rounded-2xl shadow-lg p-6">
+
+                <h2 class="text-2xl font-bold mb-6">Formulaire du facture</h2>
+                
+                <form class="flex flex-col gap-5" id="paiements-form">
+
+                    <select id="paiements-facture-select" class="border border-gray-300 rounded-lg py-3 px-4 focus:outline-none focus:ring-2 focus:ring-blue-500">
+                        <option value="electricite">Electricité</option>
+                        <option value="eau">Eau potable</option>
+                        <option value="gaz">Gaz</option>
+                        <option value="transport">Transport</option>
+                        <option value="assurance">Assurance</option>
+                    </select>
+                    
+                    <input type="text" id="facture-refernce" placeholder="Reference du facture" class="border border-gray-300 rounded-lg py-3 px-4 focus:outline-none focus:ring-2 focus:ring-blue-500">
+                    
+                    <div class="border border-gray-300 rounded-lg py-3 px-4 flex items-center gap-2">
+                        <input id="montant" type="number" placeholder="Montant" class="flex-1 outline-none">
+                        <span class="text-gray-600 font-medium">MAD</span>
+                    </div>
+                    
+                    <div class="flex justify-center mt-4">
+                        <input type="submit" value="Payer" class="bg-blue-950 text-white px-10 py-3 rounded-full hover:bg-black hover:scale-105 transition duration-300 font-medium">
+                    </div>
+
+                </form>
+
+            </div>
+
+        </div>
+
+    </main>
+
+<script type="module" src="../js/pages/paiements.js"></script>
+</body>
+</html>

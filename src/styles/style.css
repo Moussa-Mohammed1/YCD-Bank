@@ -13,6 +13,9 @@
 .gold{
     color: #D5972C;
 }
+.benefeciaire-select{
+    font-size: 9px;
+}
 .bg-gold{
     background-color: #D5972C;
 }
@@ -24,8 +27,27 @@
     from{left: -300px;}
     to{inset:0}
 }
+.scale-up{
+    animation: scale-up;
+    animation-duration: 0.5s;
+}
+@keyframes scale-up{
+    from{scale: 0.7;}
+    to{scale:1;}
+}
+.showNotification{
+    animation:notification;
+    animation-duration:1s;
+}
+@keyframes notification{
+    from{right: -300px;}
+    to{right: 1rem;}
+}
 .bg-compte-epargne{
-    background:url('../assets/images/bg-compte-epargne.png');
+    background: url('../assets/images/bg-compte-epargne.png');
     background-position: center;
     background-size: cover;
+}
+.input-error {
+    border: 2px solid red;
 }
