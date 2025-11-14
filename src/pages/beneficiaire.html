@@ -43,12 +43,12 @@
                         Comptes</a></li>
                 <li><a href="../pages/virements.html" class="block py-2 hover:text-yellow-400 transition">Virements</a>
                 </li>
-                <li><a href="../pages/paiements.html" class="block py-2 gold border-b-2 border-yellow-400">Paiements</a>
+                <li><a href="../pages/paiements.html" class="block py-2 hover:text-yellow-400 transition">Paiements</a>
                 </li>
                 <li><a href="../pages/historique.html"
                         class="block py-2 hover:text-yellow-400 transition">Historique</a></li>
                 <li><a href="../pages/beneficiaire.html"
-                        class="block py-2 hover:text-yellow-400 transition">Bénéficiaire</a></li>
+                        class="block py-2 gold border-b-2 hover:text-yellow-400 transition">Bénéficiaire</a></li>
                 <li><a href="../pages/conversion.html" class="block py-2 hover:text-yellow-400 transition">Conversion
                         Devises</a></li>
                 <li><a href="../pages/carte.html" class="block py-2 hover:text-yellow-400 transition">Cartes</a></li>
@@ -64,7 +64,8 @@
         <section>
             <h1 class="px-15 py-4 text-xl"> Gérer les Bénéficiaires</h1>
             <div class="flex justify-end mr-3 mt-3">
-                <button class="bg-[#26254F] text-white rounded-lg px-5 py-3 justify-end md:w-85 md:mr-9">
+                <button id="btn-add-beneficiaire"
+                    class="bg-[#26254F] text-white rounded-lg px-5 py-3 justify-end md:w-85 md:mr-9">
                     Ajouter un
                     Bénéficiaire </button>
             </div>
@@ -89,8 +90,8 @@
 
                         <div class="flex justify-center mt-4">
                             <button type="submit" class="bg-primary text-white px-4 py-2 rounded-lg hover:bg-primary">
-                            Ajouter
-                        </button>
+                                Ajouter
+                            </button>
                         </div>
                     </form>
 
@@ -119,7 +120,7 @@
             </div>
 
         </section>
-        <section id="les-benefeciaire" class="grid grid-cols-1 md:grid-cols-2 gap-6 mt-6 h-35 md:ml-5">
+        <section id="benefeciaire" class="grid grid-cols-1 md:grid-cols-2 gap-6 mt-6 h-35 md:ml-5">
             <div class="bg-white shadow-xl/30 rounded-lg p-4 flex justify-between items-center mb-4">
 
                 <div>
@@ -145,6 +146,7 @@
     </main>
 
     </div>
+    <li></li>
 
     </div>
 
