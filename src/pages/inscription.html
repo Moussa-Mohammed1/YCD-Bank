@@ -10,6 +10,7 @@
 </head>
 
 <body>
+
     <!-- HEADER -->
     <div class="bg-[#0F2647] h-34 flex justify-center items-center md:hidden">
         <div>
@@ -36,29 +37,29 @@
 
             <div class="bg-[#FEFEFE] drop-shadow-xl p-10 w-90 h-90 flex flex-col gap-2 items-center">
 
-                <form method="post" class="flex flex-col gap-4 items-center">
+                <form id="form-inscription" method="post" class="flex flex-col gap-4 items-center">
 
                     <div class="relative">
                         <img class="absolute left-2 top-2" src="../assets/images/user.png" width="20" alt="email logo">
-                        <input class="p-1.5 pl-10 border-gray-300 border-solid border-2 rounded-lg" type="text" required
+                        <input id="fullname-incription" class="p-1.5 pl-10 border-gray-300 border-solid border-2 rounded-lg" type="text" required
                             placeholder="Nom Comple">
                     </div>
 
                     <div class="relative">
                         <img class="absolute left-2 top-2" src="../assets/images/email.png" width="20" alt="email logo">
-                        <input class="p-1.5 pl-10 border-gray-300 border-solid border-2 rounded-lg" type="email"
+                        <input id="email-incription" class="p-1.5 pl-10 border-gray-300 border-solid border-2 rounded-lg" type="email"
                             required placeholder="Email">
                     </div>
 
                     <div class="relative">
                         <img class="absolute left-2 top-2" src="../assets/images/lock.png" width="20" alt="email logo">
-                        <input class="p-1.5 pl-10 border-gray-300 border-solid border-2 rounded-lg" type="password"
+                        <input id="password-incription" class="p-1.5 pl-10 border-gray-300 border-solid border-2 rounded-lg" type="password"
                             required placeholder="Mot de pass">
                     </div>
 
                     <div class="relative">
                         <img class="absolute left-2 top-2" src="../assets/images/lock.png" width="20" alt="email logo">
-                        <input class="p-1.5 pl-10 border-gray-300 border-solid border-2 rounded-lg" type="password"
+                        <input id="confirm-password-incription" class="p-1.5 pl-10 border-gray-300 border-solid border-2 rounded-lg" disabled type="password"
                             required placeholder=" Confirmé Mot de pass">
                     </div>
 
