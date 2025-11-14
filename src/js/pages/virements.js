@@ -1,7 +1,8 @@
-// ==== Virement JS ====
-let currentUser = null;
+let currentUser;
 
-// Charger l'utilisateur depuis le localStorage
+
+
+
 function loadCurrentUser() {
     const raw = localStorage.getItem("currentUser");
     if (raw) {
@@ -9,53 +10,70 @@ function loadCurrentUser() {
     } else {
         currentUser = {
             nomcomplet: "Utilisateur Test",
-            password: "",
+
             solde: 100000,
-            rib: "",
+
             benefeciaire: [],
-            rib_epagrne: "",
-            historique: [],
-            recharges: { favoris: [], historique: [] },
-            transactions: []
+            historique: []
         };
         localStorage.setItem("currentUser", JSON.stringify(currentUser));
     }
 }
 loadCurrentUser();
 
-// ==== Sélection des éléments ====
+
 const soldeSpan = document.getElementById("solde");
 const inputBenef = document.getElementById("input-beneficiaire");
 const inputMontant = document.querySelector("input[placeholder='0000000']");
 const inputMotif = document.querySelector("input[placeholder='Motif du virement']");
 const btnVirement = document.querySelector("button.bg-[#26254F]");
 
-// Affichage du solde
+
 function updateSolde() {
-    soldeSpan.innerText = currentUser.solde.toLocaleString();
+    soldeSpan.innerText = currentUser.solde;
 }
 updateSolde();
 
-// Recherche dynamique des bénéficiaires
+// Suggestions dynamiques
+const suggestions = document.createElement("div");
+suggestions.className = "absolute bg-white border w-full rounded shadow z-50";
+suggestions.style.display = "none";
+inputBenef.parentElement.style.position = "relative";
+inputBenef.parentElement.appendChild(suggestions);
+
 inputBenef.addEventListener("input", () => {
     const text = inputBenef.value.trim().toLowerCase();
+    suggestions.innerHTML = "";
+
+    if (text === "") {
+        suggestions.style.display = "none";
+        return;
+    }
+
     const results = currentUser.benefeciaire.filter(b =>
-        b.nom.toLowerCase().startsWith(text) || b.prenom.toLowerCase().startsWith(text)
+        b.nom.toLowerCase().includes(text) || b.prenom.toLowerCase().includes(text)
     );
 
-    // Affiche le premier résultat comme suggestion
-    if (results.length > 0) {
-        inputBenef.value = `${results[0].nom} ${results[0].prenom}`;
-    }
+    results.forEach(b => {
+        const div = document.createElement("div");
+        div.className = "px-3 py-2 hover:bg-gray-200 cursor-pointer";
+        div.innerText = `${b.nom} ${b.prenom}`;
+        div.addEventListener("click", () => {
+            inputBenef.value = `${b.nom} ${b.prenom}`;
+            suggestions.style.display = "none";
+        });
+        suggestions.appendChild(div);
+    });
+
+    suggestions.style.display = results.length ? "block" : "none";
 });
 
-// Effectuer le virement
 btnVirement.addEventListener("click", () => {
-    const beneficiereNom = inputBenef.value.trim();
-    const montant = parseFloat(inputMontant.value.replace(/\s+/g, ""));
+    const text = inputBenef.value.trim().toLowerCase();
+    const montant = parseFloat(inputMontant.value);
     const motif = inputMotif.value.trim();
 
-    if (!beneficiereNom || isNaN(montant) || montant <= 0) {
+    if (!text || isNaN(montant) || montant <= 0) {
         alert("Veuillez remplir correctement tous les champs !");
         return;
     }
@@ -65,35 +83,36 @@ btnVirement.addEventListener("click", () => {
         return;
     }
 
-    // Trouver le bénéficiaire correspondant
+    
     const benef = currentUser.benefeciaire.find(b =>
-        `${b.nom} ${b.prenom}`.toLowerCase() === beneficiereNom.toLowerCase()
+        (`${b.nom} ${b.prenom}`).toLowerCase().includes(text)
     );
+
     if (!benef) {
         alert("Bénéficiaire introuvable !");
         return;
     }
 
-    // Déduire le montant du solde
+    
     currentUser.solde -= montant;
 
-    // Ajouter à l'historique
+    
     currentUser.historique.push({
         date: new Date().toLocaleString(),
         type: "virement",
-        montant: montant,
-        motif: motif,
+        montant,
+        motif,
         beneficiaire: `${benef.nom} ${benef.prenom}`
     });
 
-    // Sauvegarder dans le localStorage
+    
     localStorage.setItem("currentUser", JSON.stringify(currentUser));
-
-    // Mise à jour affichage
+    
     updateSolde();
+
     alert("Virement effectué avec succès !");
 
-    // Réinitialiser les champs
+    
     inputBenef.value = "";
     inputMontant.value = "";
     inputMotif.value = "";
