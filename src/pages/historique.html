@@ -53,107 +53,60 @@
     </aside>
 
     <main class="md:ml-64 min-h-screen p-4 md:p-8">
-        <h1 
-            class=" font-bold text-2xl text-center md:text-start ">Historique des transaction</h1>
-        <div 
-            class="flex flex-row justify-center gap-10 flex-wrap">
-            <div 
-                class="group flex flex-row scale-up items-center md:w-2/5 gap-1 p-2 rounded-2xl 
-                       hover:shadow-xl hover:shadow-emerald-200  bg-linear-to-r from-white
+        <!-- Titre -->
+        <h1 class="font-bold text-2xl text-center md:text-start mb-6">Historique des transactions</h1>
+        
+        <!-- Cards des totaux -->
+        <div class="flex flex-row justify-center gap-10 flex-wrap mb-8">
+            <div class="group flex flex-row scale-up items-center md:w-2/5 gap-3 p-4 rounded-2xl 
+                       hover:shadow-xl hover:shadow-emerald-200 bg-gradient-to-r from-white
                         via-stone-200 to-sky-100 duration-500">
-                <i class="fa-solid fa-arrow-up group-hover:pb-3 duration-500"></i> 
-                <div class="">
-                    <h2  
-                        class="font-bold text-lg">Total des entrées</h2>
-                    <p
-                        id="historique-total-entree"
-                        class="text-center gold font-bold text-2xl" >10000 <span>DH</span> </p>
-                </div>
-            </div>
-            <div class="group flex md:w-2/5 scale-up flex-row items-center rounded-2xl 
-                hover:shadow-xl hover:shadow-red-300 bg-linear-to-r p-2 from-red-300 duration-500">
-                <i class="fa-solid fa-arrow-down group-hover:pt-3 duration-500"></i> 
+                <i class="fa-solid fa-arrow-up text-3xl text-green-600 group-hover:pb-3 duration-500"></i> 
                 <div>
-                    <h2
-                        class="font-bold text-lg">Total des depenses</h2>
-                    <p 
-                        id="historique-total-depenses"
-                        class="text-center gold font-bold text-2xl">10000 <span>DH</span></p>
+                    <h2 class="font-bold text-lg">Total des entrées</h2>
+                    <p id="historique-total-entree" class="text-center gold font-bold text-2xl">
+                        0 <span>DH</span>
+                    </p>
                 </div>
-            </div>
-        </div>
-        <div>
-            <div 
-                class="">
-                <h1 
-                    class=" font-bold text-2xl py-2 " >Trier par:</h1>
-                <select 
-                    class="outline-none focus:ring-blue-500 p-2 bg-white rounded-xl border border-black w-5/5" name="" id="">
-                    <option value="">Type d'operation</option>
-                    <option value="">Virements</option>
-                    <option value="">Facture</option>
-                    <option value="">Recharge</option>
-                </select>
             </div>
             
-            <div 
-            class="flex flex-row justify-between pt-2 font-bold text-lg ">
-                <h1>Type</h1>
-                <h1>Date</h1>
-                <h1>Montant</h1>
-            </div>
-            <div>
-                <div 
-                    class="flex flex-row bg-white mt-4 justify-between">
-                    <h1 
-                        id="historique-type"
-                        class="">Recharge</h1>
-                    <p 
-                    id="historique-date">
-                    12-02-2025</p>
-                    <p
-                        id="historique-montant">
-                    100 <span>DH</span> </p>
-                </div>
-                <div 
-                    class="flex flex-row bg-white mt-4 justify-between">
-                    <h1 
-                        id="historique-type"
-                        class="">Recharge</h1>
-                    <p 
-                    id="historique-date">
-                    12-02-2025</p>
-                    <p
-                        id="historique-montant">
-                    100 <span>DH</span> </p>
-                </div>
-                <div 
-                    class="flex flex-row bg-white mt-4 justify-between">
-                    <h1 
-                        id="historique-type"
-                        class="">Recharge</h1>
-                    <p 
-                    id="historique-date">
-                    12-02-2025</p>
-                    <p
-                        id="historique-montant">
-                    100 <span>DH</span> </p>
-                </div>
-                <div 
-                    class="flex flex-row bg-white mt-4 justify-between">
-                    <h1 
-                        id="historique-type"
-                        class="">Recharge</h1>
-                    <p 
-                    id="historique-date">
-                    12-02-2025</p>
-                    <p
-                        id="historique-montant">
-                    100 <span>DH</span> </p>
+            <div class="group flex md:w-2/5 scale-up flex-row items-center gap-3 rounded-2xl 
+                hover:shadow-xl hover:shadow-red-300 bg-gradient-to-r p-4 from-red-300 to-red-200 duration-500">
+                <i class="fa-solid fa-arrow-down text-3xl text-red-700 group-hover:pt-3 duration-500"></i> 
+                <div>
+                    <h2 class="font-bold text-lg">Total des dépenses</h2>
+                    <p id="historique-total-depenses" class="text-center gold font-bold text-2xl">
+                        0 <span>DH</span>
+                    </p>
                 </div>
             </div>
         </div>
+
+        <!-- Section filtre et liste -->
+        <div class="bg-white rounded-2xl p-6 shadow-lg">
+            <!-- Filtre -->
+            <div class="mb-6">
+                <h1 class="font-bold text-xl mb-3">Trier par:</h1>
+                <select id="filter-select" class="outline-none focus:ring-2 focus:ring-blue-500 p-3 bg-secondary rounded-xl border-2 border-gray-300 w-full md:w-1/3 cursor-pointer hover:border-blue-400 transition">
+                    <option value="">Toutes les opérations</option>
+                    <option value="Virements">Virements</option>
+                    <option value="Facture">Paiements / Factures</option>
+                    <option value="Recharge">Recharges</option>
+                </select>
+            </div>
+
+            <!-- En-têtes du tableau (desktop uniquement) -->
+            <div class="hidden md:flex flex-row justify-between px-4 py-3 bg-gray-100 rounded-lg mb-4 font-bold text-lg">
+                <h1 class="w-1/3">Type</h1>
+                <h1 class="w-1/3 text-center">Date</h1>
+                <h1 class="w-1/3 text-right">Montant</h1>
+            </div>
+
+            <!-- Container des transactions (sera rempli par JS) -->
+            <div id="transactions-container"></div>
+        </div>
     </main>
+    
     <script type="module" src="../js/pages/historique.js"></script>
 </body>
 </html>

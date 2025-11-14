@@ -13,6 +13,7 @@
 </head>
 
 <body class="bg-secondary min-h-screen">
+
     <header class="md:hidden">
         <div class="flex items-center justify-between bg-primary w-full h-20 px-4">
             <button id="open-menu">
@@ -26,7 +27,7 @@
     </header>
 
     <aside id="menu" class="hidden flex flex-col md:block fixed top-0 left-0 w-4/5 md:w-64 h-screen bg-primary z-50">
-
+     
         <div class="flex items-center justify-between md:justify-center p-5">
             <button id="close-menu" class="md:hidden">
                 <i class="fa-solid fa-xmark text-white text-3xl"></i>
@@ -36,75 +37,84 @@
             </div>
             <div class="min-w-10 md:hidden"></div>
         </div>
-
+       
         <nav class="px-4 py-4">
             <ul class="text-lg text-white text-center flex flex-col gap-4">
-                <li><a href="../pages/mes-comptes.html" class="block py-2 hover:bg-yellow-400 hover:rounded-sm  hover:text-black duration-500">Mes Comptes</a></li>
-                <li><a href="../pages/virements.html" class="block py-2 hover:bg-yellow-400 hover:rounded-sm  hover:text-black duration-500">Virements</a></li>
-                <li><a href="../pages/paiements.html" class="block py-2 hover:bg-yellow-400 hover:rounded-sm  hover:text-black duration-500">Paiements</a></li>
-                <li><a href="../pages/historique.html" class="block py-2 hover:bg-yellow-400 hover:rounded-sm  hover:text-black duration-500">Historique</a></li>
-                <li><a href="../pages/beneficiaire.html" class="block py-2 bg-yellow-500 bg-opacity-70 text-black rounded-sm transition">Bénéficiaire</a></li>
-                <li><a href="../pages/conversion.html" class="block py-2 hover:bg-yellow-400 hover:rounded-sm  hover:text-black duration-500">Conversion Devises</a></li>
-                <li><a href="../pages/carte.html" class="block py-2 hover:bg-yellow-400 hover:rounded-sm  hover:text-black duration-500">Cartes</a></li>
-                <li><a href="../pages/compte-epargne.html" class="block py-2 hover:bg-yellow-400 hover:rounded-sm  hover:text-black duration-500">Compte Epargne</a></li>
+                <li><a href="../pages/mes-comptes.html"
+                        class="block py-2 hover:bg-yellow-400 hover:rounded-sm hover:text-black duration-500">Mes
+                        Comptes</a></li>
+                <li><a href="../pages/virements.html"
+                        class="block py-2 hover:bg-yellow-400 hover:rounded-sm hover:text-black duration-500">Virements</a>
+                </li>
+                <li><a href="../pages/paiements.html"
+                        class="block py-2 hover:bg-yellow-400 hover:rounded-sm hover:text-black duration-500">Paiements</a>
+                </li>
+                <li><a href="../pages/historique.html"
+                        class="block py-2 hover:bg-yellow-400 hover:rounded-sm hover:text-black duration-500">Historique</a>
+                </li>
+                <li><a href="../pages/beneficiaire.html"
+                        class="block py-2 bg-yellow-500 bg-opacity-70 text-black rounded-sm transition">Bénéficiaire</a>
+                </li>
+                <li><a href="../pages/conversion.html"
+                        class="block py-2 hover:bg-yellow-400 hover:rounded-sm hover:text-black duration-500">Conversion
+                        Devises</a></li>
+                <li><a href="../pages/carte.html"
+                        class="block py-2 hover:bg-yellow-400 hover:rounded-sm hover:text-black duration-500">Cartes</a>
+                </li>
+                <li><a href="../pages/compte-epargne.html"
+                        class="block py-2 hover:bg-yellow-400 hover:rounded-sm hover:text-black duration-500">Compte
+                        Epargne</a></li>
             </ul>
         </nav>
-
+    
     </aside>
 
     <main class="md:ml-64 min-h-screen p-4 md:p-8">
 
         <section>
-            <h1 class="px-15 py-4 text-xl"> Gérer les Bénéficiaires</h1>
+            <h1 class="px-15 py-4 text-xl">Gérer les Bénéficiaires</h1>
             <div class="flex justify-end mr-3 mt-3">
-                <button id="btn-add-beneficiaire"
-                    class="bg-[#26254F] text-white rounded-lg px-5 py-3 justify-end md:w-85 md:mr-9">
-                    Ajouter un
-                    Bénéficiaire </button>
+                <button id="btn-add-beneficiaire" class="bg-[#26254F] text-white rounded-lg px-5 py-3">
+                    Ajouter un Bénéficiaire
+                </button>
             </div>
 
-
-            <section id="modal-beneficiaire" class=" hidden fixed inset-0  bg-[#00000073] bg-opacity-50 z-50">
-                <div class="bg-white w:11/12 md:w-1/3 mx-auto mt-32 p-6 rounded-lg shadow-lg  relative">
+            <!-- Modal ajout bénéficiaire -->
+            <section id="modal-beneficiaire"
+                class="hidden fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50">
+                <div class="bg-white w-11/12 md:w-1/3 p-6 rounded-lg relative">
                     <button id="close-modal" class="absolute top-3 right-3 text-gray-500 hover:text-black">
                         <i class="fa-solid fa-xmark text-2xl"></i>
                     </button>
                     <h2 class="text-xl font-semibold mb-4 text-center">Ajouter un bénéficiaire</h2>
-
+                   
                     <form id="form-beneficiare" class="flex flex-col gap-4">
                         <input id="input-nom" type="text" placeholder="Nom"
-                            class="border rounded-lg p-2 focus:outline-none focus:ring-2 " required>
-
+                            class="border rounded-lg p-2 focus:outline-none focus:ring-2" required>
                         <input id="input-prenom" type="text" placeholder="Prenom"
-                            class="border rounded-lg p-2 focus:outline-none focus:ring-2 " required>
-
+                            class="border rounded-lg p-2 focus:outline-none focus:ring-2" required>
                         <input id="input-rib" type="text" placeholder="RIB"
-                            class="border rounded-lg p-2 focus:outline-none focus:ring-2 " required>
-
+                            class="border rounded-lg p-2 focus:outline-none focus:ring-2" required>
                         <div class="flex justify-center mt-4">
-                            <button type="submit" id="submit-benef"
-                                class="bg-primary text-white px-4 py-2 rounded-lg hover:bg-primary">
-                                Ajouter
-                            </button>
+                            <button type="submit"
+                                class="bg-primary text-white px-4 py-2 rounded-lg hover:bg-primary">Ajouter</button>
                         </div>
                     </form>
-
+             
                 </div>
-
+            
             </section>
 
-
-
-            <div class="flex items-center gap-5 mt-6  md:gap-14">
-                <div
-                    class=" bg-zinc-50 border w-max md:w-170 md:ml-7 md:h-10 flex items-center gap-2 py-1 rounded-lg pl-1">
+            <!-- Recherche et tri -->
+            <div class="flex items-center gap-5 mt-6 md:gap-14">
+                <div class="bg-zinc-50 border w-max md:w-170 md:h-10 flex items-center gap-2 py-1 rounded-lg pl-1">
                     <i class="fa-solid fa-magnifying-glass" style="color: #000000;"></i>
-                    <input class="focus:outline-none w-40 md:w-120  " type="search"
+                    <input id="search-benef" class="focus:outline-none w-40 md:w-120" type="search"
                         placeholder="Rechercher bénéficiaire" />
                 </div>
 
                 <div>
-                    <select name="trierpar" class=" bg-zinc-50 border rounded px-3 py-2 w-32 md:w-50">
+                    <select name="trierpar" class="bg-zinc-50 border rounded px-3 py-2 w-32 md:w-50">
                         <option disabled selected>Trier par</option>
                         <option>par ordre alphabétique (A-Z)</option>
                         <option>Bénéficiaires actifs</option>
@@ -114,21 +124,14 @@
             </div>
 
         </section>
-        <section id="benefeciaire" class="grid grid-cols-1 md:grid-cols-2 gap-6 mt-6 h-35 md:ml-5">
 
-            
-        </section>
+        <!-- Container cartes bénéficiaires -->
+        <section id="benefeciaire" class="grid grid-cols-1 md:grid-cols-2 gap-6 mt-6"></section>
 
     </main>
 
-    </div>
-    <li></li>
-
-    </div>
-
-
-
     <script type="module" src="../js/pages/beneficiaire.js"></script>
+
 </body>
 
 </html>
