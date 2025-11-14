@@ -89,7 +89,7 @@ function clearError() {
 
 function showNotification(message, type = 'success') {
     const notification = document.createElement('div');
-    notification.className = `fixed top-4 right-4 px-6 py-3 rounded-lg showNotification text-white z-50 ${
+    notification.className = `fixed top-4 right-4 px-6 py-3 rounded-lg text-white z-50 ${
         type === 'success' ? 'bg-green-500' : 'bg-red-500'
     }`;
     notification.textContent = message;
@@ -124,6 +124,14 @@ function checkDuplicate(num) {
 
 function saveUserData() {
     localStorage.setItem('user', JSON.stringify(currentUser));
+    
+    const users = JSON.parse(localStorage.getItem('users')) || [];
+    const userIndex = users.findIndex(u => u.email === currentUser.email);
+    
+    if (userIndex !== -1) {
+        users[userIndex] = currentUser;
+        localStorage.setItem('users', JSON.stringify(users));
+    }
 }
 
 function loadUserData() {
@@ -344,6 +352,7 @@ function effectuerRecharge() {
     
     clearInputs();
     
+    console.log('Recharge effectuée - Nouveau solde:', currentUser.solde);
 }
 
 add_favoris.addEventListener('click', addOrUpdateFavoris);
@@ -359,7 +368,6 @@ numero.addEventListener('blur', () => {
 });
 
 function init() {
-    
     loadUserData();
     
     if (!currentUser) {
@@ -390,8 +398,8 @@ function init() {
     }
     
     saveUserData();
+    
     displayFavoris();
 }
 
 document.addEventListener('DOMContentLoaded', init);
-
