@@ -82,12 +82,11 @@ form.addEventListener("submit", (e) => {
         document.getElementById("confirm-password-incription").style.borderColor = "green";
     }
 
-    let users = JSON.parse(localStorage.getItem("users")) || [];
-
-    for(let i = 0; i < users.length; i++){
-        if(users[i].email === email){
-            window.alert("This email is already in use. use a different email");
-            document.getElementById("email-incription").style.borderColor = "red";
+    const existingUser = localStorage.getItem("user");
+    
+    if (existingUser) {
+        const userConfirm = confirm("Un compte existe déjà. Voulez-vous le remplacer ?");
+        if (!userConfirm) {
             return;
         }
     }
@@ -98,7 +97,9 @@ form.addEventListener("submit", (e) => {
         password: password,
         solde: 10000,
         rib: genrerib(),
-        rib_epagrne: genrerib(),
+        rib_epargne: genrerib(),
+        benefeciaire: [],
+        historique: [],
         recharges: {
             favoris: [],
             historique: []
@@ -106,9 +107,7 @@ form.addEventListener("submit", (e) => {
         transactions: []
     };
 
-    users.push(currentUser);
-
-    localStorage.setItem("users", JSON.stringify(users));
+    localStorage.setItem("user", JSON.stringify(currentUser));
 
     window.alert("Your account has been successfully created :)");
     form.reset();
