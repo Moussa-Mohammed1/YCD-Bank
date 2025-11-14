@@ -28,7 +28,7 @@ form.addEventListener("submit", (e) => {
         return;
     }
 
-    window.alert(`welcome ${user.nomcomplet} your wallet waiting you :)`);
+    window.alert(`welcome ${user.nomcomplet} your wallet is waiting you :)`);
     form.reset();
     window.location.href = "src/pages/mes-comptes.html";
 })
