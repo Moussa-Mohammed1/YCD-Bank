@@ -9,6 +9,7 @@
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
 </head>
 <body class="bg-secondary min-h-screen">
+   
     <header>
 
     <div class="flex items-center justify-between bg-primary w-full h-20 md:hidden">
@@ -43,65 +44,95 @@
         </div>
         
         <nav class="px-4 py-4">
-            <ul class="text-lg text-white text-center  flex flex-col gap-4">
-                <li><a href="../pages/mes-comptes.html" class="block py-2 gold  border-b-2 border-yellow-400 transition">Mes Comptes</a></li>
-                <li><a href="../pages/virements.html" class="block py-2 hover:text-yellow-400 transition">Virements</a></li>
-                <li><a href="../pages/paiements.html" class="block py-2 transition hover:text-yellow-400">Paiements</a></li>
-                <li><a href="../pages/historique.html" class="block py-2 hover:text-yellow-400 transition">Historique</a></li>
-                <li><a href="../pages/beneficiaire.html" class="block py-2 hover:text-yellow-400 transition">Bénéficiaire</a></li>
-                <li><a href="../pages/conversion.html" class="block py-2 hover:text-yellow-400 transition">Conversion Devises</a></li>
-                <li><a href="../pages/carte.html" class="block py-2 hover:text-yellow-400 transition">Cartes</a></li>
-                <li><a href="../pages/compte-epargne.html" class="block py-2 hover:text-yellow-400 transition">Compte Epargne</a></li>
+            <ul class="text-lg text-white text-center flex flex-col gap-4">
+                <li><a href="../pages/mes-comptes.html" class="block py-2 bg-yellow-500 bg-opacity-70 text-black rounded-sm transition">Mes Comptes</a></li>
+                <li><a href="../pages/virements.html" class="block py-2 hover:bg-yellow-400 hover:rounded-sm  hover:text-black duration-500">Virements</a></li>
+                <li><a href="../pages/paiements.html" class="block py-2 hover:bg-yellow-400 hover:rounded-sm  hover:text-black duration-500">Paiements</a></li>
+                <li><a href="../pages/historique.html" class="block py-2 hover:bg-yellow-400 hover:rounded-sm  hover:text-black duration-500">Historique</a></li>
+                <li><a href="../pages/beneficiaire.html" class="block py-2 hover:bg-yellow-400 hover:rounded-sm  hover:text-black duration-500">Bénéficiaire</a></li>
+                <li><a href="../pages/conversion.html" class="block py-2 hover:bg-yellow-400 hover:rounded-sm  hover:text-black duration-500">Conversion Devises</a></li>
+                <li><a href="../pages/carte.html" class="block py-2 hover:bg-yellow-400 hover:rounded-sm  hover:text-black duration-500">Cartes</a></li>
+                <li><a href="../pages/compte-epargne.html" class="block py-2 hover:bg-yellow-400 hover:rounded-sm  hover:text-black duration-500">Compte Epargne</a></li>
             </ul>
         </nav>
         
     </aside>
     <main class="md:ml-64 min-h-screen p-4 md:p-8">
+        <div id="favoris-forum" class="hidden fixed inset-0 flex justify-center items-center bg-black/70 z-50">
+        </div>
+        <div
+            class="flex flex-row gap-2 md:gap-4 text-sm md:text-2xl py-5">
+            <a 
+                class="text-black hover:text-blue-400 duration-500"
+                href="../pages/mes-comptes.html">Mes comptes</a>
+            >
+            <a 
+                class="text-blue-400 hover:text-blue-950 duration-500"
+            href="../pages/recharge.html"> Recharge</a>
+        </div>
         <h1 class="capitalize font-bold text-2xl py-4 text-center lg:text-start">Recharge telecom et internet</h1>
         <div class="bg-white rounded-2xl p-4 drop-shadow-transparent shadow-xl">
             <h3 class="capitalize font-bold  pb-2 pt-3">operateur</h3>
-            <select name="recharge-operateur" id="recharge-operateur" class="border-black border-2 bg-secondary outline-none w-5/5 py-2">
-                <option value="">Maroc Telecom</option>
-                <option value="">Inwi</option>
-                <option value="">Orange</option>
+            <select id="recharge-operateur" class="border-black border rounded-sm outline-none w-5/5 py-2">
+                <option value="iam">Maroc Telecom</option>
+                <option value="inwi">Inwi</option>
+                <option value="orange">Orange</option>
             </select>
             <div class="relative w-5/5">
-                <h1 class="capitalize font-bold pb-2 pt-3">Montant</h1>
-                <div class="flex flex-row justify-between w-full border px-3 pr-12 py-2 text-xl">
-                    <input type="text" name="recharge-montant" placeholder="000"
-                        class="outline-none"/>
-                    <span class="text-xl pointer-events-none">
-                        MAD
-                    </span>
+                
+                <div class="flex flex-row justify-between">
+                    <div class="flex flex-col ">
+                        <h1 class="capitalize font-bold pb-2 pt-3">Montant</h1>
+                        <select name="recharge-montant" id="recharge-montant" class="flex flex-row justify-between w-5/5 border rounded-sm px-3 pr-12 h-10 text-xl">
+                            <option value="10">10</option>
+                            <option value="20">20</option>
+                            <option value="30">30</option>
+                            <option value="50">50</option>
+                            <option value="100">100</option>
+                            <option value="200">200</option>
+                            <option value="300">300</option>
+                            <option value="500">500</option>
+                        </select>
+                    </div>
+                    <div class="w-2/5 flex flex-col">
+                        <h1  class="capitalize font-bold pb-2 pt-3">Offre</h1>
+                        <select name="" id="recharge-offre"  class="border-black border-2 bg-secondary outline-none px-3 rounded-sm py-2">
+                            <option value="recharge-internet">internet</option>
+                            <option value="recharge-telecom">telecom</option>
+                        </select>
+                    </div>
                 </div>
             </div>
             <div 
                 class="mt-10">
                 <h2 
                         class="text-sm font-bold py-2">Numero à recharger</h2>
+            <div class=" flex flex-row justify-between">
                 <div   
-                    class="flex flex-row justify-between">
+                    class="flex relative flex-row justify-between">
                     
                     <input 
-                        name="recharge-numero" type="text" placeholder="Ex :0600000000"
+                        id="recharge-numero" type="text" placeholder="Ex :0600000000"
                         class=" w-2/5 border  py-2 px-1">
+                    <div id="error-message" style="position: absolute;top:2.5em ; color:red; font-size:0.9em; margin-top:4px;"></div>
                 
-                <button  
-                    id="ajouter-favoris-btn"
-                    class="bg-black text-white rounded-2xl text-xs px-3">
-                    Ajouter aux Favoris
-                </button>
+                    <button  
+                        id="ajouter-favoris-btn"
+                        class="bg-black hover:bg-blue-950 hover:scale-105 duration-300 text-white rounded-2xl text-xs px-3">
+                        Ajouter aux Favoris
+                    </button>
                 </div>
             </div>
-            <!--FAVORIS PHASE : auto generated in js-->
+            </div>
+            <!--FAVORIS PHASE : will be generated in js generated in js-->
             <div id="recharge-favoris"
                 class="mt-3 flex flex-col gap-2">
                 <h1 
-                    class="pt-2 font-bold">Numeros Fvoris</h1>
+                    class="pt-2 font-bold">Numeros Favoris</h1>
                 <div class="flex flex-row my-2 justify-around bg-secondary ">
                     <p id="recharge-numero">0600000000</p>
                     <p id="recharge-nom">Moussa</p>
-                    <p id="recharge-montant-recharge">20 <span>MAD</span> </p>
+                    <p id="recent-operator">Maroc telecom</p>
                     <button 
                         class="recharge-favoris-menu-dots hover:bg-gray-500 rounded-4xl ">
                         <i class="fa-solid fa-ellipsis-vertical"></i>
@@ -115,7 +146,12 @@
                     </div>
                 </div>
             </div>
-            
+            <div
+                class="flex flex-row items-center justify-center mt-7">
+                <button
+                id="recharger-btn"
+                class="bg-blue-950 cursor-pointer px-10 py-3 text-white rounded-4xl hover:px-11 hover:bg-black duration-300">Recharger</button>
+            </div>
         </div>
         </div>
     </main>
